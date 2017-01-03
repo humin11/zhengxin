@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchPage } from '../search/search';
-import { NavController } from 'ionic-angular';
+import { IonicApp, App,NavController,MenuController  } from 'ionic-angular';
+import { CompanyDetailsPage } from '../company-details/company-details';
 
 @Component({
   selector: 'page-home',
@@ -8,13 +9,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController,private menu: MenuController,private app: IonicApp) {
+    menu.enable(true);
   }
 
   focus() {
     this.navCtrl.push(SearchPage);
   }
 
+  openPage() {
+    //jump to others page here
+  }
 
+  CompanyDetails() {
+    this.navCtrl.push(CompanyDetailsPage);
+  }
 }

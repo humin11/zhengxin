@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SearchPage } from '../pages/search/search';
 import { Storage } from '@ionic/storage';
+import { CompanyDetailsPage } from '../pages/company-details/company-details';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { Storage } from '@ionic/storage';
     HomePage,
     LoginPage,
     SearchPage,
+    CompanyDetailsPage,
     TabsPage
   ],
   imports: [
@@ -30,6 +32,7 @@ import { Storage } from '@ionic/storage';
     HomePage,
     LoginPage,
     SearchPage,
+    CompanyDetailsPage,
     TabsPage
   ],
   providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]

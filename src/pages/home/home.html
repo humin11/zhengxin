@@ -1,10 +1,51 @@
-<!-- <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>信而有征</ion-title>
-  </ion-navbar>
-</ion-header> -->
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="menuContent">
+    <ion-list>
+      <button ion-item (click)="openPage(homePage)">
+        首页
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(quotation)">
+        行情
+      </button>
+      <button ion-item (click)="openPage(product)">
+        产品
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(account)">
+        账户
+      </button>
+      <button ion-item (click)="openPage(attention)">
+        关注
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(setting)">
+        设置
+      </button>
+      <button ion-item (click)="openPage(aboutUs)">
+        关于我们
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-<ion-content no-padding>
+ <ion-header>
+  <ion-navbar  color="primary">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding #content>
   <ion-item color="primary" padding-top no-lines>
     <h1 text-center class="logo-title">信而有征</h1>
   </ion-item>
@@ -13,7 +54,7 @@
     <ion-card-content no-padding>
       <ion-row>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="purple">
+          <button ion-button block class="button-circle" color="purple" (click)="CompanyDetails()">
             <ion-icon name="at" large></ion-icon>
           </button>
           企业
