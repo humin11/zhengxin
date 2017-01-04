@@ -18,6 +18,7 @@ import { CopyrightPage } from '../pages/copyright/copyright';
 import { InvestorRelationsPage } from '../pages/investor-relations/investor-relations';
 import { RatingInformationPage } from '../pages/rating-information/rating-information';
 import { CreditReportPage } from '../pages/credit-report/credit-report';
+import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,18 @@ import { CreditReportPage } from '../pages/credit-report/credit-report';
     InvestorRelationsPage,
     RatingInformationPage,
     CreditReportPage,
+    OwnershipStructurePage,
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios'
+    }, {})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,6 +69,7 @@ import { CreditReportPage } from '../pages/credit-report/credit-report';
     InvestorRelationsPage,
     RatingInformationPage,
     CreditReportPage,
+    OwnershipStructurePage,
     TabsPage
   ],
   providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]
