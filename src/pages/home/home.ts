@@ -17,11 +17,9 @@ export class HomePage {
     this.navCtrl.push(SearchPage);
   }
 
-  openPage() {
-    //jump to others page here
-  }
 
   CompanyDetails() {
     this.navCtrl.push(CompanyDetailsPage);
   }
+
 }

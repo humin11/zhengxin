@@ -26,4 +26,8 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+
+  openPage() {
+    //jump to others page here
+  }
 }

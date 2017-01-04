@@ -1,1 +1,41 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- <ion-title>Pages</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="menuContent">
+    <ion-list>
+      <button ion-item (click)="openPage(homePage)">
+        首页
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(quotation)">
+        行情
+      </button>
+      <button ion-item (click)="openPage(product)">
+        产品
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(account)">
+        账户
+      </button>
+      <button ion-item (click)="openPage(attention)">
+        关注
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="openPage(setting)">
+        设置
+      </button>
+      <button ion-item (click)="openPage(aboutUs)">
+        关于我们
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

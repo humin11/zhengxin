@@ -9,6 +9,15 @@ import { LoginPage } from '../pages/login/login';
 import { SearchPage } from '../pages/search/search';
 import { Storage } from '@ionic/storage';
 import { CompanyDetailsPage } from '../pages/company-details/company-details';
+import { BusinessInformationPage } from '../pages/business-information/business-information';
+import { AnnualReportPage } from '../pages/annual-report/annual-report';
+import { PatentInformationPage } from '../pages/patent-information/patent-information';
+import { DeclarationComponent } from '../components/declaration/declaration';
+import { JudicialDecisionPage } from '../pages/judicial-decision/judicial-decision';
+import { CopyrightPage } from '../pages/copyright/copyright';
+import { InvestorRelationsPage } from '../pages/investor-relations/investor-relations';
+import { RatingInformationPage } from '../pages/rating-information/rating-information';
+import { CreditReportPage } from '../pages/credit-report/credit-report';
 
 @NgModule({
   declarations: [
@@ -19,6 +28,15 @@ import { CompanyDetailsPage } from '../pages/company-details/company-details';
     LoginPage,
     SearchPage,
     CompanyDetailsPage,
+    BusinessInformationPage,
+    AnnualReportPage,
+    PatentInformationPage,
+    DeclarationComponent,
+    JudicialDecisionPage,
+    CopyrightPage,
+    InvestorRelationsPage,
+    RatingInformationPage,
+    CreditReportPage,
     TabsPage
   ],
   imports: [
@@ -33,6 +51,15 @@ import { CompanyDetailsPage } from '../pages/company-details/company-details';
     LoginPage,
     SearchPage,
     CompanyDetailsPage,
+    BusinessInformationPage,
+    AnnualReportPage,
+    PatentInformationPage,
+    DeclarationComponent,
+    JudicialDecisionPage,
+    CopyrightPage,
+    InvestorRelationsPage,
+    RatingInformationPage,
+    CreditReportPage,
     TabsPage
   ],
   providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]

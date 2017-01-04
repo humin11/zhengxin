@@ -1,41 +1,3 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="menuContent">
-    <ion-list>
-      <button ion-item (click)="openPage(homePage)">
-        首页
-      </button>
-    </ion-list>
-    <ion-list>
-      <button ion-item (click)="openPage(quotation)">
-        行情
-      </button>
-      <button ion-item (click)="openPage(product)">
-        产品
-      </button>
-    </ion-list>
-    <ion-list>
-      <button ion-item (click)="openPage(account)">
-        账户
-      </button>
-      <button ion-item (click)="openPage(attention)">
-        关注
-      </button>
-    </ion-list>
-    <ion-list>
-      <button ion-item (click)="openPage(setting)">
-        设置
-      </button>
-      <button ion-item (click)="openPage(aboutUs)">
-        关于我们
-      </button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 
  <ion-header>
   <ion-navbar  color="primary">
@@ -45,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content no-padding #content>
+<ion-content no-padding>
   <ion-item color="primary" padding-top no-lines>
     <h1 text-center class="logo-title">信而有征</h1>
   </ion-item>
