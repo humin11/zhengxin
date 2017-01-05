@@ -71,7 +71,7 @@ before_deploy:
   # `ionic build android` wraps `cordova build android`, which gives a legit exit code if it fails. Ionic does not; test apk exists.
   - ls ./platforms/android/build/outputs/apk/android*.apk
 
-#deploy:
-#  provider: script
-#  script: .travis/deploy.sh
-#  skip_cleanup: true
+deploy:
+  provider: script
+  script: .travis/deploy.sh
+  skip_cleanup: true
