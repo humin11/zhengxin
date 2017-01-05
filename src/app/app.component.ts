@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Nav,Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -7,11 +7,13 @@ import { LoginPage } from '../pages/login/login';
 
 import {Storage} from '@ionic/storage';
 
+import { RegisterPage } from '../pages/register/register';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  @ViewChild(Nav) nav: Nav;
   public rootPage:any;
 
   constructor(platform: Platform, private storage: Storage) {
@@ -27,7 +29,13 @@ export class MyApp {
     });
   }
 
-  openPage() {
-    //jump to others page here
+  openPage(key) {
+    // if(key=="account"){
+    //   this.nav.push(LoginPage);
+    // }else if(key=="setting"){
+    //   this.nav.setRoot(RegisterPage);
+    // }
+    this.nav.setRoot(LoginPage);
+    console.log(key);
   }
 }

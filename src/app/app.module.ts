@@ -19,6 +19,7 @@ import { InvestorRelationsPage } from '../pages/investor-relations/investor-rela
 import { RatingInformationPage } from '../pages/rating-information/rating-information';
 import { CreditReportPage } from '../pages/credit-report/credit-report';
 import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-s
     RatingInformationPage,
     CreditReportPage,
     OwnershipStructurePage,
+    RegisterPage,
     TabsPage
   ],
   imports: [
@@ -70,6 +72,7 @@ import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-s
     RatingInformationPage,
     CreditReportPage,
     OwnershipStructurePage,
+    RegisterPage,
     TabsPage
   ],
   providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]

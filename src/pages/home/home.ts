@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { SearchPage } from '../search/search';
-import { IonicApp, App,NavController,MenuController  } from 'ionic-angular';
+import { IonicApp,NavController,MenuController  } from 'ionic-angular';
 import { CompanyDetailsPage } from '../company-details/company-details';
+
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-home',
@@ -9,8 +12,11 @@ import { CompanyDetailsPage } from '../company-details/company-details';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,private menu: MenuController,private app: IonicApp) {
+  constructor(public http: Http,public navCtrl: NavController,private menu: MenuController,private app: IonicApp) {
     menu.enable(true);
+    // this.http.get('json/business/12d61309e7361b3e3d2f49e9dd31b937_business.json').map(res => res.json()).subscribe(data => {
+    //     console.log(data);
+    // });
   }
 
   focus() {
