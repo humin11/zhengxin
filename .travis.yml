@@ -73,7 +73,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: chmod +x .travis/deploy.sh && .travis/deploy.sh
+  script: chmod u+x ./.travis/deploy.sh && sh ./.travis/deploy.sh
   skip_cleanup: true
   on:
     all_branches: true
