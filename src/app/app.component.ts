@@ -29,13 +29,4 @@ export class MyApp {
     });
   }
 
-  openPage(key) {
-    // if(key=="account"){
-    //   this.nav.push(LoginPage);
-    // }else if(key=="setting"){
-    //   this.nav.setRoot(RegisterPage);
-    // }
-    this.nav.setRoot(LoginPage);
-    console.log(key);
-  }
 }

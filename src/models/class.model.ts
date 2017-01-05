@@ -1,25 +1,25 @@
-export interface Business{
+export interface Business {
   shareholder_info: Array<any>;
   business_info: Detail;
   main: Array<Main_info>;
   detail_id:string;
   branch: Array<any>;
 }
-export interface Main_info{
+export interface Main_info {
   supervisor_uname: string;
   supervisor_type: string;
 }
 
-export interface CerInfo{
+export interface CerInfo {
   cert_detail: Array<any>;
   detail_id: string;
 }
 
-export interface ChangeInfo{
+export interface ChangeInfo {
   change_detail: Array<Change_detail>;
   detail_id: string;
 }
-export interface Change_detail{
+export interface Change_detail {
   cbefore: string;
   cproject: string;
   cdate: string;
@@ -28,12 +28,12 @@ export interface Change_detail{
 }
 
 
-export interface CopyRightInfo{
+export interface CopyRightInfo {
   copy_right_detail: Array<any>;
   detail_id: string;
 }
 
-export interface Detail{
+export interface Detail {
   detail_type:string;
   detail_status:string;
   contact_detail: Array<any>;
@@ -43,11 +43,11 @@ export interface Detail{
   detail_range: string;
 }
 
-export interface Investment{
+export interface Investment {
   investment: Array<Investment_info>;
   detail_id: string;
 }
-export interface Investment_info{
+export interface Investment_info {
   idate: string;
   iuname: string;
   iamt: string;
@@ -56,13 +56,13 @@ export interface Investment_info{
   saddress: string;
 }
 
-export interface List{
+export interface List {
   totalCount: number;
   page: number;
   count: number;
   detail: Array<List_detail>;
 }
-export interface List_detail{
+export interface List_detail {
   detail_name: string;
   detail_address: string;
   detail_amt: string;
@@ -71,16 +71,16 @@ export interface List_detail{
   detail_corporation: string;
 }
 
-export interface PatentInfo{
+export interface PatentInfo {
   patent_detail: Array<any>;
   detail_id: string;
 }
 
-export interface Sentence{
+export interface Sentence {
   sentence_detail: Array<Sentence_detail>;
   detail_id: string;
 }
-export interface Sentence_detail{
+export interface Sentence_detail {
   sdetail: string;
   sdate: string;
   scode: string;
@@ -89,11 +89,11 @@ export interface Sentence_detail{
   sid: string;
 }
 
-export interface Shareholder{
+export interface Shareholder {
   shareholder_info: Array<Shareholder_info>;
   detail_id: string;
 }
-export interface Shareholder_info{
+export interface Shareholder_info {
   sname: string;
   scale: string;
   samt_date: string;

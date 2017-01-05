@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { List } from '../models/class.model';
 import 'rxjs/add/operator/map';
 
 /*
@@ -10,10 +11,10 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class CompanyServe {
-
-  constructor(public http: Http) {
-    
-    console.log('Hello CompanyServe Provider');
+  companyList :List;
+  constructor(public http: Http) {}
+  getList(){
+    return this.http.get('assets/json/list/list.json').map(res => res.json())
   }
 
 }
