@@ -1,0 +1,141 @@
+{
+	"totalCount": 17,
+	"page": 1,
+	"count": 20,
+	"detail": [{
+		"detail_name": "深圳市腾讯计算机系统有限公司",
+		"detail_address": "深圳市南山区高新区高新南一路飞亚达大厦5-10楼",
+		"detail_amt": "6500万元",
+		"detail_industry": "软件和信息技术服务业",
+		"detail_id": "f1c5372005e04ba99175d5fd3db7b8fc",
+		"detail_corporation": "马化腾"
+	},
+	{
+		"detail_name": "北京京东世纪贸易有限公司",
+		"detail_address": "北京市北京经济技术开发区科创十一街18号C座2层201室",
+		"detail_amt": "139798.5564 万元 美元",
+		"detail_industry": "批发业",
+		"detail_id": "b40ecf6c3e7e4e0414c501f6ce53dd37",
+		"detail_corporation": "刘强东"
+	},
+	{
+		"detail_name": "北京京东金融科技控股有限公司",
+		"detail_address": "北京市北京经济技术开发区科创十一街18号C座2层221室",
+		"detail_amt": "23325 万元 人民币",
+		"detail_industry": "商务服务业",
+		"detail_id": "0961e0b2c861e7915a204ca0e8e5996f",
+		"detail_corporation": "刘强东"
+	},
+	{
+		"detail_name": "北京京东世纪信息技术有限公司",
+		"detail_address": "北京市北京经济技术开发区科创十一街18号院C座2层215室",
+		"detail_amt": "50000 万元 人民币",
+		"detail_industry": "- -",
+		"detail_id": "c9912118e1889a47d7b59a2769db2a52",
+		"detail_corporation": "张雱"
+	},
+	{
+		"detail_name": "恒大粮油集团有限公司",
+		"detail_address": "深圳市前海深港合作区前湾一路1号A栋201室(入驻深圳市前海商务秘书有限公司)经营场所：深圳市罗湖区红岭中路2118号建设集团大厦A座1903",
+		"detail_amt": "30000万元",
+		"detail_industry": "批发业",
+		"detail_id": "75455b060fafae8a6e5abd07e39e2c16",
+		"detail_corporation": "高占民"
+	},
+	{
+		"detail_name": "大连万达集团股份有限公司",
+		"detail_address": "辽宁省大连市西岗区长江路539号",
+		"detail_amt": "100000万人民币",
+		"detail_industry": "房地产业",
+		"detail_id": "befe52d9753b511b6aef5e33fe00f97d",
+		"detail_corporation": "王健林"
+	},
+	{
+		"detail_name": "万达百货有限公司",
+		"detail_address": "北京市朝阳区建国路93号万达广场B座12层",
+		"detail_amt": "80000 万元",
+		"detail_industry": "零售业",
+		"detail_id": "3091ca708634cbefcf7b5a29ffe1d67a",
+		"detail_corporation": "王志彬"
+	},
+	{
+		"detail_name": "华信万达期货股份有限公司",
+		"detail_address": "郑州市郑东新区商务内环路27号楼1单元3层01号、2单元3层02号",
+		"detail_amt": "126166.7506万元",
+		"detail_industry": "资本市场服务",
+		"detail_id": "dcf24b65c2991da32729acfd58a2fb4e",
+		"detail_corporation": "张岩"
+	},
+	{
+		"detail_name": "内蒙古伊利实业集团股份有限公司",
+		"detail_address": "内蒙古自治区呼和浩特市金山开发区金山大街１号",
+		"detail_amt": "606480.0108万人民币元",
+		"detail_industry": "食品制造业",
+		"detail_id": "39f9e16a0ec03c7591cb2b721d103d32",
+		"detail_corporation": "潘刚"
+	},
+	{
+		"detail_name": "国金基金管理有限公司",
+		"detail_address": "北京市怀柔区府前街三号楼3-6",
+		"detail_amt": "28000 万元",
+		"detail_industry": "资本市场服务",
+		"detail_id": "14bc471e65f135548699e57b3243175b",
+		"detail_corporation": "尹庆军"
+	},
+	{
+		"detail_name": "内蒙古蒙牛乳业（集团）股份有限公司",
+		"detail_address": "内蒙古呼和浩特市和林格尔盛乐经济园区",
+		"detail_amt": "150429.087万人民币元",
+		"detail_industry": "食品制造业",
+		"detail_id": "957be43aafff535541284d6992f1535a",
+		"detail_corporation": "卢敏放"
+	},
+	{
+		"detail_name": "浙江天猫技术有限公司",
+		"detail_address": "杭州余杭区五常街道五常大道168号二层",
+		"detail_amt": "4900万美元",
+		"detail_industry": "软件和信息技术服务业",
+		"detail_id": "561b327281de903b19bb458772446bfe",
+		"detail_corporation": "张勇"
+	},
+	{
+		"detail_name": "苹果电子产品商贸（北京）有限公司",
+		"detail_address": "北京市东城区东长安街1号东方广场东方经贸城东一办公楼二十层2,4,5,6室",
+		"detail_amt": "4500 万元 美元",
+		"detail_industry": "批发业",
+		"detail_id": "66e9d0ae6d0523344e9dac7045e9c248",
+		"detail_corporation": "麦克·约瑟夫·博德（Michael Joseph Boyd J"
+	},
+	{
+		"detail_name": "唯品会（中国）有限公司",
+		"detail_address": "广州市荔湾区芳村花海街20号自编6号楼",
+		"detail_amt": "18000万人民币",
+		"detail_industry": "批发业",
+		"detail_id": "12d61309e7361b3e3d2f49e9dd31b937",
+		"detail_corporation": "沈亚"
+	},
+	{
+		"detail_name": "滴滴出行科技有限公司",
+		"detail_address": "天津经济技术开发区南港工业区综合服务区办公楼C座103室12单元",
+		"detail_amt": "5000万人民币",
+		"detail_industry": "研究和试验发展",
+		"detail_id": "44d5992e16ff513c91f86c5b0fdf2227",
+		"detail_corporation": "陈汀"
+	},
+	{
+		"detail_name": "北京新浪互联信息服务有限公司",
+		"detail_address": "北京市海淀区东北旺西路中关村软件园二期(西扩)N-1、N-2地块新浪总部科研楼5层503室",
+		"detail_amt": "12000 万元",
+		"detail_industry": "互联网和相关服务",
+		"detail_id": "61c6984a6a796e5ce017760cfc81a012",
+		"detail_corporation": "杜红"
+	},
+	{
+		"detail_name": "国家开发银行股份有限公司",
+		"detail_address": "北京市西城区复兴门内大街18号",
+		"detail_amt": "42124836.54 万元",
+		"detail_industry": "货币金融服务",
+		"detail_id": "a69e3cfe660333b1ff6eee51ed04404a",
+		"detail_corporation": "胡怀邦"
+	}]
+}

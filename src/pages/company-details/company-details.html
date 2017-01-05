@@ -1,0 +1,144 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>公司详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row class="details">
+      <ion-col width-20>
+        <ion-avatar>
+          <img src="">
+        </ion-avatar>
+      </ion-col>
+      <ion-col width-80>
+        <ion-row>
+          <ion-col>
+            <h2>上海罗颉思投资管理有限公司</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            张山
+          </ion-col>
+          <ion-col>
+            始于1985年
+          </ion-col>
+          <ion-col>
+            30年
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            北京
+          </ion-col>
+          <ion-col>
+            货运运输
+          </ion-col>
+          <ion-col>
+            20000万元
+          </ion-col>
+        </ion-row>
+      </ion-col>
+  </ion-row>
+  <ion-row no-padding>
+     <ion-col>
+       <button ion-button clear block color="danger" icon-left (click)="ratingInformation()">
+         <!-- <ion-icon name='star'></ion-icon> -->
+         评级：SSS
+       </button>
+     </ion-col>
+     <ion-col text-center>
+       <button ion-button clear block color="danger" icon-left (click)="creditReport()">
+         <!-- <ion-icon name='musical-notes'></ion-icon> -->
+         信用报告
+       </button>
+     </ion-col>
+     <ion-col text-right>
+       <button ion-button clear block color="danger" icon-left>
+         <!-- <ion-icon name='share-alt'></ion-icon> -->
+         关注中
+       </button>
+     </ion-col>
+   </ion-row>
+  <ion-card no-padding>
+    <ion-item-divider color="primary">联系信息</ion-item-divider>
+    <ion-item>
+      <p>电话：12345678901</p>
+      <p>网址：www.123.com</p>
+      <p>邮箱：12345678901@139.com</p>
+      <p>地址：北京是东花市北里20号楼6单元501室</p>
+    </ion-item>
+  </ion-card>
+  <ion-card no-padding>
+    <ion-card-content no-padding>
+      <ion-row>
+        <ion-col width-20 text-center (click)="businessInformation()">
+          <button ion-button block class="button-circle" color="purple">
+            <ion-icon name="at" large></ion-icon>
+          </button>
+          工商信息
+        </ion-col>
+        <ion-col width-20 text-center>
+          <button ion-button block class="button-circle" color="yellow">
+            <ion-icon name="paper"></ion-icon>
+          </button>
+          变更纪录
+        </ion-col>
+        <ion-col width-20 text-center (click)="investorRelations()">
+          <button ion-button block class="button-circle" color="green">
+            <ion-icon name="filing"></ion-icon>
+          </button>
+          投资关系
+        </ion-col>
+        <ion-col width-20 text-center (click)="annualReport()">
+          <button ion-button block class="button-circle" color="blue">
+            <ion-icon name="eye"></ion-icon>
+          </button>
+          企业年报
+        </ion-col>
+        <ion-col width-20 text-center (click)="ownershipStructure()">
+          <button ion-button block class="button-circle" color="red">
+            <ion-icon name="git-compare"></ion-icon>
+          </button>
+          股权结构
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-20 text-center (click)="judicialDecision()">
+          <button ion-button block class="button-circle" color="purple">
+            <ion-icon name="at" large></ion-icon>
+          </button>
+          法院判决
+        </ion-col>
+        <ion-col width-20 text-center (click)="patentInformation()">
+          <button ion-button block class="button-circle" color="yellow">
+            <ion-icon name="paper"></ion-icon>
+          </button>
+          专利信息
+        </ion-col>
+        <ion-col width-20 text-center (click)="copyright()">
+          <button ion-button block class="button-circle" color="green">
+            <ion-icon name="filing"></ion-icon>
+          </button>
+          著作权
+        </ion-col>
+        <ion-col width-20 text-center>
+          <button ion-button block class="button-circle" color="blue">
+            <ion-icon name="eye"></ion-icon>
+          </button>
+          资质认证
+        </ion-col>
+        <ion-col width-20 text-center>
+          <button ion-button block class="button-circle" color="red">
+            <ion-icon name="git-compare"></ion-icon>
+          </button>
+          动产抵押
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
