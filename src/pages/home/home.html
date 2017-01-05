@@ -1,6 +1,9 @@
-<!-- <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>信而有征</ion-title>
+
+ <!-- <ion-header>
+  <ion-navbar  color="primary">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header> -->
 
@@ -13,7 +16,7 @@
     <ion-card-content no-padding>
       <ion-row>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="purple">
+          <button ion-button block class="button-circle" color="purple" (click)="CompanyDetails()">
             <ion-icon name="at" large></ion-icon>
           </button>
           企业

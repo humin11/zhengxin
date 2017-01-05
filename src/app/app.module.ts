@@ -8,6 +8,18 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SearchPage } from '../pages/search/search';
 import { Storage } from '@ionic/storage';
+import { CompanyDetailsPage } from '../pages/company-details/company-details';
+import { BusinessInformationPage } from '../pages/business-information/business-information';
+import { AnnualReportPage } from '../pages/annual-report/annual-report';
+import { PatentInformationPage } from '../pages/patent-information/patent-information';
+import { DeclarationComponent } from '../components/declaration/declaration';
+import { JudicialDecisionPage } from '../pages/judicial-decision/judicial-decision';
+import { CopyrightPage } from '../pages/copyright/copyright';
+import { InvestorRelationsPage } from '../pages/investor-relations/investor-relations';
+import { RatingInformationPage } from '../pages/rating-information/rating-information';
+import { CreditReportPage } from '../pages/credit-report/credit-report';
+import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
@@ -17,10 +29,29 @@ import { Storage } from '@ionic/storage';
     HomePage,
     LoginPage,
     SearchPage,
+    CompanyDetailsPage,
+    BusinessInformationPage,
+    AnnualReportPage,
+    PatentInformationPage,
+    DeclarationComponent,
+    JudicialDecisionPage,
+    CopyrightPage,
+    InvestorRelationsPage,
+    RatingInformationPage,
+    CreditReportPage,
+    OwnershipStructurePage,
+    RegisterPage,
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios'
+    }, {})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +61,18 @@ import { Storage } from '@ionic/storage';
     HomePage,
     LoginPage,
     SearchPage,
+    CompanyDetailsPage,
+    BusinessInformationPage,
+    AnnualReportPage,
+    PatentInformationPage,
+    DeclarationComponent,
+    JudicialDecisionPage,
+    CopyrightPage,
+    InvestorRelationsPage,
+    RatingInformationPage,
+    CreditReportPage,
+    OwnershipStructurePage,
+    RegisterPage,
     TabsPage
   ],
   providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]
