@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /bin/sh
 
 ssh-keyscan -H -p 4891 122.115.52.16  >> ~/.ssh/known_hosts
 scp -i .travis/cloud.key -P 4891 -r www/* root@122.115.52.16:/usr/share/nginx/html/
