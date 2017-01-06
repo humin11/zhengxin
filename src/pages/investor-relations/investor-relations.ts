@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration';
-
+import { Investment,Investment_info} from '../../models/class.model';
 /*
   Generated class for the InvestorRelations page.
 
@@ -14,11 +14,14 @@ import { DeclarationComponent } from '../../components/declaration/declaration';
   providers: [DeclarationComponent]
 })
 export class InvestorRelationsPage {
-
+  investment : Investment;
+  investmentInfo : Investment_info[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
+  ionViewWillLoad() {
     console.log('ionViewDidLoad InvestorRelationsPage');
+    this.investment = this.navParams.get('investment');
+    this.investmentInfo = this.investment.investment;
   }
 
 }

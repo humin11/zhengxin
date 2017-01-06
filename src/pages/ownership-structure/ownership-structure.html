@@ -16,10 +16,10 @@
 <ion-content no-padding>
   <ion-card class="ownership-card">
     <ion-list>
-      <ion-item>
+      <ion-item *ngFor="let shareholder of shareholderInfo">
         <ion-row>
           <ion-col>
-            张苏纳
+            {{shareholder.sname}}
           </ion-col>
           <ion-col>
             200y
@@ -29,33 +29,7 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            VIRGIN CO
-          </ion-col>
-          <ion-col>
-            100y
-          </ion-col>
-          <ion-col>
-            50%
-          </ion-col>
-        </ion-row>
-      </ion-item>
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            张张
-          </ion-col>
-          <ion-col>
-            100y
-          </ion-col>
-          <ion-col>
-            50%
-          </ion-col>
-        </ion-row>
-      </ion-item>
     </ion-list>
   </ion-card>
-  <declaration></declaration>
+  <!-- <declaration></declaration> -->
 </ion-content>

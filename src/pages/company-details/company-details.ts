@@ -9,11 +9,14 @@ import { InvestorRelationsPage } from '../investor-relations/investor-relations'
 import { RatingInformationPage } from '../rating-information/rating-information';
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
-import { List_detail,Detail,Contact_detail,Sentence,PatentInfo,CopyRightInfo } from '../../models/class.model';
+import { Investment,Shareholder,List_detail,Detail,Contact_detail,Sentence,PatentInfo,CopyRightInfo,Business } from '../../models/class.model';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
 import { CopyrightServe } from '../../providers/copyright-serve';
+import { BusinessServe } from '../../providers/business-serve';
+import { InvestmentServe } from '../../providers/investment-serve';
+import { ShareholderServe } from '../../providers/shareholder-serve';
 
 /*
   Generated class for the Search page.
@@ -24,7 +27,7 @@ import { CopyrightServe } from '../../providers/copyright-serve';
 @Component({
   selector: 'page-company-details',
   templateUrl: 'company-details.html',
-  providers:[ListDetailServe,JudicialDecisionServe,PatentInfoServe,CopyrightServe]
+  providers:[InvestmentServe,ShareholderServe,BusinessServe,ListDetailServe,JudicialDecisionServe,PatentInfoServe,CopyrightServe]
 })
 export class CompanyDetailsPage {
   //列表信息
@@ -43,7 +46,16 @@ export class CompanyDetailsPage {
   //专利信息
   copyRightInfo:CopyRightInfo;
 
-  constructor(private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {}
+  //工商信息
+  business:Business;
+
+  //股东
+  shareholder : Shareholder;
+
+  //投资
+  investment : Investment;
+
+  constructor(private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {}
 
   ionViewWillLoad() {
      this.con = this.navParams.get("info");
@@ -77,11 +89,17 @@ export class CompanyDetailsPage {
   }
 
   businessInformation() {
-    this.navCtrl.push(BusinessInformationPage);
+    this.businessServe.getBusiness(this.con.detail_id).subscribe(data => {
+      this.business = data;
+      this.navCtrl.push(BusinessInformationPage,{business:this.business});
+    })
   }
 
   investorRelations() {
-    this.navCtrl.push(InvestorRelationsPage);
+    this.investmentServe.getInvestment(this.con.detail_id).subscribe(data => {
+      this.investment = data;
+      this.navCtrl.push(InvestorRelationsPage,{investment : this.investment});
+    })
   }
 
   ratingInformation() {
@@ -93,6 +111,9 @@ export class CompanyDetailsPage {
   }
 
   ownershipStructure() {
-    this.navCtrl.push(OwnershipStructurePage);
+    this.shareholderServe.getSentence(this.con.detail_id).subscribe(data =>{
+      this.shareholder = data;
+      this.navCtrl.push(OwnershipStructurePage,{shareholder : this.shareholder});
+    })
   }
 }

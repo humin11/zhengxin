@@ -1,6 +1,15 @@
 page-company-details {
   font-family: 'Microsoft Yahei';
   .details{
+    ion-avatar{
+      margin-top: 70%;
+      margin-right: auto;
+    }
+    ion-col{
+      overflow:hidden!important;
+      white-space:nowrap;
+      text-overflow:ellipsis!important;
+    }
     margin:0  12px;
   }
   .button-circle {

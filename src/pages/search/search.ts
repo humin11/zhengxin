@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CompanyServe } from '../../providers/company-serve';
-import { List,List_detail,Contact_detail } from '../../models/class.model';
+import { List,List_detail,Detail } from '../../models/class.model';
 import { CompanyDetailsPage } from '../company-details/company-details';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 
@@ -20,8 +20,7 @@ export class SearchPage {
   conList: List;
   totalCount: number;
   details:List_detail[];
-  detail:List_detail;
-  contactDetail:Contact_detail;
+  detail:Detail;
   constructor(private listDetailServe:ListDetailServe,private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {
@@ -36,7 +35,6 @@ export class SearchPage {
   CompanyDetails(con) {
     this.listDetailServe.getListDetail(con.detail_id).subscribe(data => {
       this.detail = data;
-      this.contactDetail = data.contact_detail;
       this.navCtrl.push(CompanyDetailsPage,{info:con,detail:this.detail});
     });
   }
