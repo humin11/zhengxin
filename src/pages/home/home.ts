@@ -3,7 +3,6 @@ import { SearchPage } from '../search/search';
 import { IonicApp,NavController,MenuController  } from 'ionic-angular';
 import { CompanyDetailsPage } from '../company-details/company-details';
 import { CompanyServe } from "../../providers/company-serve";
-import { List } from '../../models/class.model';
 
 @Component({
   selector: 'page-home',
@@ -11,7 +10,7 @@ import { List } from '../../models/class.model';
   providers:[CompanyServe]
 })
 export class HomePage {
-  conList: List;
+
   constructor(private companyServe:CompanyServe,public navCtrl: NavController,private app: IonicApp) {}
 
   focus() {
@@ -19,10 +18,10 @@ export class HomePage {
   }
 
   ionViewWillLoad() {
-    this.companyServe.getList().subscribe(data => {
-        this.conList = data;
-        console.log(this.conList);
-    });
+    // this.companyServe.getList().subscribe(data => {
+    //     this.conList = data;
+    //     console.log(this.conList);
+    // });
   }
 
 

@@ -35,22 +35,22 @@
     </ion-item-group>
   </ion-card> -->
 
-  <ion-label>搜索结果1条</ion-label>
+  <ion-label>搜索结果{{totalCount}}条</ion-label>
   <ion-list style="width:100%">
-    <ion-item>
-      <h2>上海罗颉投资有限公司</h2>
+    <ion-item *ngFor="let con of detail" (click)="CompanyDetails()">
+      <h2>{{con.detail_name}}</h2>
       <ion-row>
         <ion-col width-25>
-          <p>北京</p>
+          <p>{{con.detail_address}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>张三</p>
+          <p>{{con.detail_corporation}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>货运运输</p>
+          <p>{{con.detail_industry}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>20000万元</p>
+          <p>{{con.detail_amt}}</p>
         </ion-col>
       </ion-row>
     </ion-item>
