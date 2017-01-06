@@ -17,12 +17,12 @@
       <ion-col width-80>
         <ion-row>
           <ion-col>
-            <h2>上海罗颉思投资管理有限公司</h2>
+            <h2>{{con.detail_name}}</h2>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            张山
+            {{con.detail_corporation}}
           </ion-col>
           <ion-col>
             始于1985年
@@ -33,13 +33,13 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            北京
+            {{con.detail_address}}
           </ion-col>
           <ion-col>
-            货运运输
+            {{con.detail_industry}}
           </ion-col>
           <ion-col>
-            20000万元
+            {{con.detail_amt}}
           </ion-col>
         </ion-row>
       </ion-col>
@@ -67,10 +67,10 @@
   <ion-card no-padding>
     <ion-item-divider color="primary">联系信息</ion-item-divider>
     <ion-item>
-      <p>电话：12345678901</p>
-      <p>网址：www.123.com</p>
-      <p>邮箱：12345678901@139.com</p>
-      <p>地址：北京是东花市北里20号楼6单元501室</p>
+      <p>{{contactDetail.detail_mail}}</p>
+      <p>网址：{{contactDetail.detail_web}}</p>
+      <p>邮箱：1234567@135.com</p>
+      <p>{{contactDetail.detail_address}}</p>
     </ion-item>
   </ion-card>
   <ion-card no-padding>

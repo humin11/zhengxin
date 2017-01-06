@@ -9,6 +9,11 @@ import { InvestorRelationsPage } from '../investor-relations/investor-relations'
 import { RatingInformationPage } from '../rating-information/rating-information';
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
+import { List_detail,Detail,Contact_detail,Sentence,PatentInfo,CopyRightInfo } from '../../models/class.model';
+import { ListDetailServe } from '../../providers/list-detail-serve';
+import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
+import { PatentInfoServe } from '../../providers/patent-info-serve';
+import { CopyrightServe } from '../../providers/copyright-serve';
 
 /*
   Generated class for the Search page.
@@ -18,23 +23,46 @@ import { OwnershipStructurePage } from '../ownership-structure/ownership-structu
 */
 @Component({
   selector: 'page-company-details',
-  templateUrl: 'company-details.html'
+  templateUrl: 'company-details.html',
+  providers:[ListDetailServe,JudicialDecisionServe,PatentInfoServe,CopyrightServe]
 })
 export class CompanyDetailsPage {
+  //列表信息
+  con:List_detail;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {
-  }
+  //企业详细信息
+  detail:Detail;
+  contactDetail:Contact_detail;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyDetailsPage');
+  //法院判决
+  sentence:Sentence;
+
+  //专利信息
+  patentInfo:PatentInfo;
+
+  //专利信息
+  copyRightInfo:CopyRightInfo;
+
+  constructor(private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {}
+
+  ionViewWillLoad() {
+     this.con = this.navParams.get("info");
+     this.detail = this.navParams.get("detail");
+     this.contactDetail = this.detail.contact_detail;
   }
 
   judicialDecision() {
-    this.navCtrl.push(JudicialDecisionPage);
+    this.judicialDecisionServe.getJudicialDecision(this.con.detail_id).subscribe(data => {
+      this.sentence = data;
+      this.navCtrl.push(JudicialDecisionPage,{sentence:this.sentence});
+    });
   }
 
   copyright() {
-    this.navCtrl.push(CopyrightPage);
+    this.copyrightServe.getCopyright(this.con.detail_id).subscribe(data => {
+      this.copyRightInfo = data;
+      this.navCtrl.push(CopyrightPage,{copyRightInfo:this.copyRightInfo});
+    });
   }
 
   annualReport() {
@@ -42,7 +70,10 @@ export class CompanyDetailsPage {
   }
 
   patentInformation() {
-    this.navCtrl.push(PatentInformationPage);
+    this.patentInfoServe.getPatentInfo(this.con.detail_id).subscribe(data => {
+      this.patentInfo = data;
+      this.navCtrl.push(PatentInformationPage,{patentInfo:this.patentInfo});
+    });
   }
 
   businessInformation() {

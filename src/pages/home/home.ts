@@ -24,13 +24,4 @@ export class HomePage {
     // });
   }
 
-
-  CompanyDetails() {
-    this.navCtrl.push(CompanyDetailsPage);
-    // this.navCtrl.push(CompanyDetailsPage).then(() => {
-    //   const index = this.navCtrl.getActive().index;
-    //   this.navCtrl.remove(0, index);
-    // });
-  }
-
 }

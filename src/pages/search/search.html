@@ -37,7 +37,7 @@
 
   <ion-label>搜索结果{{totalCount}}条</ion-label>
   <ion-list style="width:100%">
-    <ion-item *ngFor="let con of detail" (click)="CompanyDetails()">
+    <ion-item *ngFor="let con of details" (click)="CompanyDetails(con)">
       <h2>{{con.detail_name}}</h2>
       <ion-row>
         <ion-col width-25>

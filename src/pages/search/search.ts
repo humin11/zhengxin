@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CompanyServe } from '../../providers/company-serve';
-import { List,List_detail } from '../../models/class.model';
+import { List,List_detail,Contact_detail } from '../../models/class.model';
 import { CompanyDetailsPage } from '../company-details/company-details';
+import { ListDetailServe } from '../../providers/list-detail-serve';
 
 /*
   Generated class for the Search page.
@@ -13,29 +14,31 @@ import { CompanyDetailsPage } from '../company-details/company-details';
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html',
-  providers:[CompanyServe]
+  providers:[CompanyServe,ListDetailServe]
 })
 export class SearchPage {
   conList: List;
   totalCount: number;
-  detail:List_detail[];
-  constructor(private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
+  details:List_detail[];
+  detail:List_detail;
+  contactDetail:Contact_detail;
+  constructor(private listDetailServe:ListDetailServe,private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {
     this.companyServe.getList().subscribe(data => {
         this.conList = data;
         this.totalCount = this.conList.totalCount;
-        this.detail = this.conList.detail;
-        console.log(this.conList);
+        this.details = this.conList.detail;
     });
   }
 
-  CompanyDetails() {
-    this.navCtrl.push(CompanyDetailsPage);
-    // this.navCtrl.push(CompanyDetailsPage).then(() => {
-    //   const index = this.navCtrl.getActive().index;
-    //   this.navCtrl.remove(0, index);
-    // });
+
+  CompanyDetails(con) {
+    this.listDetailServe.getListDetail(con.detail_id).subscribe(data => {
+      this.detail = data;
+      this.contactDetail = data.contact_detail;
+      this.navCtrl.push(CompanyDetailsPage,{info:con,detail:this.detail});
+    });
   }
 
 }
