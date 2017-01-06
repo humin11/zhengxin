@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "ionic:build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build --release",
     "ionic:serve": "ionic-app-scripts serve",
     "e2e": "protractor",
     "postinstall": "ionic state restore && webdriver-manager update",
