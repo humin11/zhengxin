@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration'
 
+
 /*
   Generated class for the JudicialDecision page.
 
@@ -19,6 +20,7 @@ export class JudicialDecisionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad JudicialDecisionPage');
+    
   }
 
 }

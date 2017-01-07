@@ -10,6 +10,10 @@ import { RatingInformationPage } from '../rating-information/rating-information'
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
 
+import { List,List_detail,Business,Detail,Investment ,Shareholder} from '../../models/class.model';
+import { BusinessServe} from '../../providers/business-serve';
+import {InvestmentServe} from '../../providers/investment-serve';
+import {ShareholderServe} from '../../providers/shareholder-serve';
 /*
   Generated class for the Search page.
 
@@ -18,15 +22,21 @@ import { OwnershipStructurePage } from '../ownership-structure/ownership-structu
 */
 @Component({
   selector: 'page-company-details',
-  templateUrl: 'company-details.html'
+  templateUrl: 'company-details.html',
+  providers:[BusinessServe,InvestmentServe,ShareholderServe]
 })
 export class CompanyDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {
+  const : List_detail;
+  business : Business;
+  detail : Detail;
+  investment : Investment;
+  shareholder : Shareholder;
+  constructor(private businessServe : BusinessServe,private investmentServe :  InvestmentServe,private shareholderServe : ShareholderServe,public navCtrl: NavController, public navParams: NavParams,private app: IonicApp) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyDetailsPage');
+  ionViewWillLoad() {
+    this.const = this.navParams.get("cons");
   }
 
   judicialDecision() {
@@ -46,11 +56,19 @@ export class CompanyDetailsPage {
   }
 
   businessInformation() {
-    this.navCtrl.push(BusinessInformationPage);
+    this.businessServe.getBusiness(this.const.detail_id).subscribe(data => {
+      this.business = data;
+      this.detail = this.business.business_info;
+      console.log(this.detail);
+      this.navCtrl.push(BusinessInformationPage,{detail:this.detail});
+    })
   }
 
   investorRelations() {
-    this.navCtrl.push(InvestorRelationsPage);
+    this.investmentServe.getInvestment(this.const.detail_id).subscribe(data => {
+      this.investment = data;
+      this.navCtrl.push(InvestorRelationsPage,{investment : this.investment});
+    })
   }
 
   ratingInformation() {
@@ -62,6 +80,9 @@ export class CompanyDetailsPage {
   }
 
   ownershipStructure() {
-    this.navCtrl.push(OwnershipStructurePage);
+    this.shareholderServe.getSentence(this.const.detail_id).subscribe(data =>{
+      this.shareholder = data;
+      this.navCtrl.push(OwnershipStructurePage,{shareholder : this.shareholder});
+    })
   }
 }

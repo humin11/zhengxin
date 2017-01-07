@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CompanyServe } from '../../providers/company-serve';
+import { List,List_detail } from '../../models/class.model';
+import { CompanyDetailsPage } from '../company-details/company-details';
 
 /*
   Generated class for the Search page.
@@ -9,14 +12,30 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   selector: 'page-search',
-  templateUrl: 'search.html'
+  templateUrl: 'search.html',
+  providers:[CompanyServe]
 })
 export class SearchPage {
+  conList: List;
+  totalCount: number;
+  detail:List_detail[];
+  constructor(private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  ionViewWillLoad() {
+    this.companyServe.getList().subscribe(data => {
+        this.conList = data;
+        this.totalCount = this.conList.totalCount;
+        this.detail = this.conList.detail;
+        console.log(this.conList);
+    });
+  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+  CompanyDetails(con) {
+    this.navCtrl.push(CompanyDetailsPage,{cons : con});
+    // this.navCtrl.push(CompanyDetailsPage).then(() => {
+    //   const index = this.navCtrl.getActive().index;
+    //   this.navCtrl.remove(0, index);
+    // });
   }
 
 }
