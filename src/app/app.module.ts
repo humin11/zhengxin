@@ -20,6 +20,10 @@ import { RatingInformationPage } from '../pages/rating-information/rating-inform
 import { CreditReportPage } from '../pages/credit-report/credit-report';
 import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
 import { RegisterPage } from '../pages/register/register';
+import { NewsSinglePage } from '../pages/news-single/news-single';
+
+import { NewsService } from '../providers/news';
+import { CompanyService } from '../providers/companies';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,7 @@ import { RegisterPage } from '../pages/register/register';
     CreditReportPage,
     OwnershipStructurePage,
     RegisterPage,
+    NewsSinglePage,
     TabsPage
   ],
   imports: [
@@ -73,8 +78,9 @@ import { RegisterPage } from '../pages/register/register';
     CreditReportPage,
     OwnershipStructurePage,
     RegisterPage,
+    NewsSinglePage,
     TabsPage
   ],
-  providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Storage, NewsService, CompanyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

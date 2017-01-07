@@ -50,20 +50,14 @@
   </ion-card>
   <ion-card>
     <ion-item-group>
-      <ion-item-divider color="red">热点</ion-item-divider>
+      <ion-item-divider color="red">热点企业</ion-item-divider>
       <ion-item>
+        <ion-icon name="football" item-left large></ion-icon>
         <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
         <p>2016-12-29</p>
       </ion-item>
       <ion-item>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
+        <ion-icon name="football" item-left large></ion-icon>
         <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
         <p>2016-12-29</p>
       </ion-item>
@@ -72,15 +66,9 @@
   <ion-card>
     <ion-item-group>
       <ion-item-divider color="primary">资讯</ion-item-divider>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
+      <ion-item *ngFor="let _news of news" [navPush]="newsSinglePage" [navParams]="_news">
+        <h2 color="gray">{{ _news.title }}</h2>
+        <p>{{ _news.create_at }}</p>
       </ion-item>
     </ion-item-group>
   </ion-card>
