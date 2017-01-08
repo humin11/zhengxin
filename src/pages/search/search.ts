@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { CompanyServe } from '../../providers/company-serve';
 import { List,Detail } from '../../models/class.model';
 import { Company } from '../../models/company';
 import { CompanyDetailsPage } from '../company-details/company-details';
+import { CompanyService } from '../../providers/companies';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 
 /*
@@ -14,23 +14,21 @@ import { ListDetailServe } from '../../providers/list-detail-serve';
 */
 @Component({
   selector: 'page-search',
-  templateUrl: 'search.html',
-  providers:[CompanyServe,ListDetailServe]
+  templateUrl: 'search.html'
 })
 export class SearchPage {
-  conList: List;
+  public companies: Company[];
   totalCount: number;
   details: Company[];
   detail:Detail;
   public companyDetailsPage: any = CompanyDetailsPage;
 
-  constructor(private listDetailServe:ListDetailServe,private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(private listDetailServe:ListDetailServe,private companyService: CompanyService,public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {
-    this.companyServe.getList().subscribe(data => {
-        this.conList = data;
-        this.totalCount = this.conList.totalCount;
-        this.details = this.conList.detail;
+    this.companyService.getAll().subscribe(data => {
+        this.companies = data;
+        this.totalCount = this.companies.length;
     });
   }
 
