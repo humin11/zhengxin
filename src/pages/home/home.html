@@ -51,14 +51,11 @@
   <ion-card>
     <ion-item-group>
       <ion-item-divider color="red">热点企业</ion-item-divider>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
+      <ion-item *ngFor="let _company of _hot_companies" [navPush]="companyDetailsPage">
+        <ion-avatar item-left>
+          <img src="/assets/icon/company.png">
+        </ion-avatar>
+        <h2 color="gray">{{ _company.name }}</h2>
         <p>2016-12-29</p>
       </ion-item>
     </ion-item-group>

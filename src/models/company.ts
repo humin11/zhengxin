@@ -8,6 +8,7 @@ export class Company {
   public industry: string;
   public company_id: string;
   public like: boolean;
+  public hot: boolean;
   public corporation: string;
 
   constructor() {

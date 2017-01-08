@@ -5,6 +5,7 @@
 		"industry": "软件和信息技术服务业",
 		"company_id": "f1c5372005e04ba99175d5fd3db7b8fc",
 		"like": true,
+		"hot": true,
 		"corporation": "马化腾"
 	},
 	{
@@ -14,6 +15,7 @@
 		"industry": "批发业",
 		"company_id": "b40ecf6c3e7e4e0414c501f6ce53dd37",
 		"like": true,
+		"hot": true,
 		"corporation": "刘强东"
 	},
 	{
@@ -22,6 +24,7 @@
 		"amt": "23325 万元 人民币",
 		"industry": "商务服务业",
 		"company_id": "0961e0b2c861e7915a204ca0e8e5996f",
+		"hot": true,
 		"corporation": "刘强东"
 	},
 	{

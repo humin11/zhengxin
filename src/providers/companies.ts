@@ -27,6 +27,10 @@ export class CompanyService {
     return this.http.get('/assets/json/companies.json').map(res =>  res.json()).map(x => x.filter((c: Company) => c.like === true ));
   }
 
+  getHot(): Observable<Company[]> {
+    return this.http.get('/assets/json/companies.json').map(res =>  res.json()).map(x => x.filter((c: Company) => c.hot === true ));
+  }
+
   get(id: string): Company {
     return this.companies.find(company => company.company_id === id );
   }
