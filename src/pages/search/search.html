@@ -39,20 +39,20 @@
     <ion-list-header>
       搜索结果{{totalCount}}条
     </ion-list-header>
-    <ion-item *ngFor="let con of details" [navPush]="companyDetailsPage" [navParams]="con">
-      <h2>{{con.detail_name}}</h2>
+    <ion-item *ngFor="let con of companies" [navPush]="companyDetailsPage" [navParams]="con">
+      <h2>{{con.name}}</h2>
       <ion-row>
         <ion-col width-25>
-          <p>{{con.detail_address}}</p>
+          <p>{{con.address}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>{{con.detail_corporation}}</p>
+          <p>{{con.corporation}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>{{con.detail_industry}}</p>
+          <p>{{con.industry}}</p>
         </ion-col>
         <ion-col width-25>
-          <p>{{con.detail_amt}}</p>
+          <p>{{con.amt}}</p>
         </ion-col>
       </ion-row>
     </ion-item>
