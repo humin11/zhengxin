@@ -1,3 +1,7 @@
+'use strict';
+
+import { Company } from './company';
+
 export interface Business {
   shareholder_info: Array<any>;
   business_info: Detail;
@@ -44,14 +48,16 @@ export interface Copy_right_detail {
 }
 
 //企业基本信息 节点
-export interface Detail {
-  detail_type:string;  //公司类型
-  detail_status:string; // 经营状态
-  contact_detail: Contact_detail;
-  detail_credit_code: string; //统一社会信誉代码
-  detail_reg_code: string; //注册号
-  detail_org_code: string;  //组织机构代码
-  detail_range: string; //经营范围
+export class Detail {
+  public detail_type:string; //公司类型
+  public detail_status:string; // 经营状态
+  public contact_detail: Contact_detail;
+  public detail_credit_code: string; //统一社会信誉代码
+  public detail_reg_code: string; //注册号
+  public detail_org_code: string; //组织机构代码
+  public detail_range: string; //经营范围
+
+  constructor(detail_type:string, detail_status:string, contact_detail: Contact_detail, detail_credit_code: string, detail_reg_code: string, detail_org_code: string, detail_range: string) {}
 }
 export interface Contact_detail {
   detail_address: string;
@@ -76,15 +82,7 @@ export interface List {
   totalCount: number;
   page: number;
   count: number; //数量
-  detail: Array<List_detail>;
-}
-export interface List_detail {
-  detail_name: string; //公司名称
-  detail_address: string; //公司地址
-  detail_amt: string; //注册资本
-  detail_industry: string; //行业
-  detail_id: string;
-  detail_corporation: string; //法定代表人
+  detail: Array<Company>;
 }
 
 export interface PatentInfo {

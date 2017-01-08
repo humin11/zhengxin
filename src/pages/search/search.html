@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
   <!-- <ion-card>
     <ion-item-group>
       <ion-item-divider color="primary">热门搜索</ion-item-divider>
@@ -35,9 +35,11 @@
     </ion-item-group>
   </ion-card> -->
 
-  <ion-label>搜索结果{{totalCount}}条</ion-label>
   <ion-list style="width:100%">
-    <ion-item *ngFor="let con of details" (click)="CompanyDetails(con)">
+    <ion-list-header>
+      搜索结果{{totalCount}}条
+    </ion-list-header>
+    <ion-item *ngFor="let con of details" [navPush]="companyDetailsPage" [navParams]="con">
       <h2>{{con.detail_name}}</h2>
       <ion-row>
         <ion-col width-25>

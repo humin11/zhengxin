@@ -21,7 +21,7 @@ export class HomePage {
   public _hot_companies: Company[] = [];
   public companyDetailsPage: any = CompanyDetailsPage;
 
-  constructor(public http: Http,public navCtrl: NavController,private menu: MenuController,private app: IonicApp, private newsService: NewsService, private companyService: CompanyService) {
+  constructor(public navCtrl: NavController, private menu: MenuController, private app: IonicApp, private newsService: NewsService, private companyService: CompanyService) {
     menu.enable(true);
     // this.http.get('json/business/12d61309e7361b3e3d2f49e9dd31b937_business.json').map(res => res.json()).subscribe(data => {
     //     console.log(data);

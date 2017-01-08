@@ -24,6 +24,13 @@ import { NewsSinglePage } from '../pages/news-single/news-single';
 
 import { NewsService } from '../providers/news';
 import { CompanyService } from '../providers/companies';
+import { ListDetailServe } from '../providers/list-detail-serve';
+import { JudicialDecisionServe } from '../providers/judicial-decision-serve';
+import { PatentInfoServe } from '../providers/patent-info-serve';
+import { CopyrightServe } from '../providers/copyright-serve';
+import { BusinessServe } from '../providers/business-serve';
+import { InvestmentServe } from '../providers/investment-serve';
+import { ShareholderServe } from '../providers/shareholder-serve';
 
 @NgModule({
   declarations: [
@@ -81,6 +88,6 @@ import { CompanyService } from '../providers/companies';
     NewsSinglePage,
     TabsPage
   ],
-  providers: [Storage, NewsService, CompanyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Storage, NewsService, CompanyService, ListDetailServe, JudicialDecisionServe, PatentInfoServe, CopyrightServe, BusinessServe, InvestmentServe, ShareholderServe, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

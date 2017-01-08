@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CompanyServe } from '../../providers/company-serve';
-import { List,List_detail,Detail } from '../../models/class.model';
+import { List,Detail } from '../../models/class.model';
+import { Company } from '../../models/company';
 import { CompanyDetailsPage } from '../company-details/company-details';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 
@@ -19,8 +20,10 @@ import { ListDetailServe } from '../../providers/list-detail-serve';
 export class SearchPage {
   conList: List;
   totalCount: number;
-  details:List_detail[];
+  details: Company[];
   detail:Detail;
+  public companyDetailsPage: any = CompanyDetailsPage;
+
   constructor(private listDetailServe:ListDetailServe,private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {

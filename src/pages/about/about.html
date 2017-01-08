@@ -12,7 +12,7 @@
 
   </ion-list> -->
 
-  <ion-card *ngFor="let company of companies" [navPush]="companyDetailsPage">
+  <ion-card *ngFor="let company of companies" [navPush]="companyDetailsPage" [navParams]="company">
 
     <ion-item>
       <ion-avatar item-left>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { List_detail } from '../models/class.model';
+import { Observable } from 'rxjs/Rx';
+import { Detail } from '../models/class.model';
 import 'rxjs/add/operator/map';
 
 /*
@@ -14,8 +15,8 @@ export class ListDetailServe {
 
   constructor(public http: Http) {}
 
-  getListDetail(id){
-    return this.http.get('assets/json/detail/'+id+'_detail.json').map(res => res.json())
+  getListDetail(id: string): Observable<Detail> {
+    return this.http.get('/assets/json/detail/'+id+'_detail.json').map(res => res.json());
   }
 
 }
