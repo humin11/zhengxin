@@ -2,77 +2,64 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>公司详情</ion-title>
+    <ion-title>{{ company.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content no-padding>
-  <ion-row class="details">
-      <ion-col width-20>
-        <ion-avatar>
-          <img src="">
-        </ion-avatar>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="/assets/icon/company.png">
+      </ion-avatar>
+      <h2>{{ company.name }}</h2>
+      <p>{{ company.industry }}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p><b>法人: </b> {{ company.corporation }}</p>
+      <p><b>注册资本: </b> {{ company.amt }}</p>
+      <p><b>地址: </b> {{ company.address }}</p>
+      <p><b>公司性质: </b> {{ companyInfo?.detail_type }}</p>
+      <p><b>公司状态: </b> {{ companyInfo?.detail_status }}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="danger">
+          <ion-icon name="heart"></ion-icon>
+          <div>赞一下</div>
+        </button>
       </ion-col>
-      <ion-col width-80>
-        <ion-row>
-          <ion-col>
-            <h2>上海罗颉思投资管理有限公司</h2>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            张山
-          </ion-col>
-          <ion-col>
-            始于1985年
-          </ion-col>
-          <ion-col>
-            30年
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            北京
-          </ion-col>
-          <ion-col>
-            货运运输
-          </ion-col>
-          <ion-col>
-            20000万元
-          </ion-col>
-        </ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="primary">
+          <ion-icon name="albums"></ion-icon>
+          <div>信用报告</div>
+        </button>
       </ion-col>
-  </ion-row>
-  <ion-row no-padding>
-     <ion-col>
-       <button ion-button clear block color="danger" icon-left (click)="ratingInformation()">
-         <!-- <ion-icon name='star'></ion-icon> -->
-         评级：SSS
-       </button>
-     </ion-col>
-     <ion-col text-center>
-       <button ion-button clear block color="danger" icon-left (click)="creditReport()">
-         <!-- <ion-icon name='musical-notes'></ion-icon> -->
-         信用报告
-       </button>
-     </ion-col>
-     <ion-col text-right>
-       <button ion-button clear block color="danger" icon-left>
-         <!-- <ion-icon name='share-alt'></ion-icon> -->
-         关注中
-       </button>
-     </ion-col>
-   </ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="blue">
+          <ion-icon name="globe"></ion-icon>
+          <div>SSS级别</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
   <ion-card no-padding>
     <ion-item-divider color="primary">联系信息</ion-item-divider>
-    <ion-item>
-      <p>电话：12345678901</p>
-      <p>网址：www.123.com</p>
-      <p>邮箱：12345678901@139.com</p>
-      <p>地址：北京是东花市北里20号楼6单元501室</p>
+    <ion-item text-wrap>
+      <p>{{companyInfo?.contact_detail.detail_mail}}</p>
+      <p>网址：{{companyInfo?.contact_detail.detail_web}}</p>
+      <p>{{companyInfo?.contact_detail.detail_address}}</p>
+      <p>经营范围: {{companyInfo?.detail_range}}</p>
     </ion-item>
   </ion-card>
+
   <ion-card no-padding>
     <ion-card-content no-padding>
       <ion-row>

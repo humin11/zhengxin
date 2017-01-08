@@ -16,31 +16,31 @@
     <ion-card-content no-padding>
       <ion-row>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="purple" (click)="CompanyDetails()">
+          <button ion-button block class="button-circle" color="purple" (click)="focus()">
             <ion-icon name="at" large></ion-icon>
           </button>
           企业
         </ion-col>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="yellow">
+          <button ion-button block class="button-circle" color="yellow" (click)="focus()">
             <ion-icon name="paper"></ion-icon>
           </button>
           年报
         </ion-col>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="green">
+          <button ion-button block class="button-circle" color="green" (click)="focus()">
             <ion-icon name="filing"></ion-icon>
           </button>
           专利
         </ion-col>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="blue">
+          <button ion-button block class="button-circle" color="blue" (click)="focus()">
             <ion-icon name="eye"></ion-icon>
           </button>
           商标
         </ion-col>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="red">
+          <button ion-button block class="button-circle" color="red" (click)="focus()">
             <ion-icon name="git-compare"></ion-icon>
           </button>
           图谱
@@ -50,29 +50,22 @@
   </ion-card>
   <ion-card>
     <ion-item-group>
-      <ion-item-divider color="red">热点</ion-item-divider>
-      <ion-item>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
+      <ion-item-divider color="red">热点企业</ion-item-divider>
+      <ion-item *ngFor="let _company of _hot_companies" [navPush]="companyDetailsPage" [navParams]="_company">
+        <ion-avatar item-left>
+          <img src="/assets/icon/company.png">
+        </ion-avatar>
+        <h2 color="gray">{{ _company.name }}</h2>
+        <p>{{ _company.industry }}</p>
       </ion-item>
     </ion-item-group>
   </ion-card>
   <ion-card>
     <ion-item-group>
       <ion-item-divider color="primary">资讯</ion-item-divider>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="football" item-left large></ion-icon>
-        <h2 color="gray">以人民为中心，习近平总书记民生情怀直抵人心</h2>
-        <p>2016-12-29</p>
+      <ion-item *ngFor="let _news of news" [navPush]="newsSinglePage" [navParams]="_news">
+        <h2 color="gray">{{ _news.title }}</h2>
+        <p>{{ _news.create_at }}</p>
       </ion-item>
     </ion-item-group>
   </ion-card>

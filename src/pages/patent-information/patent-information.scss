@@ -1,5 +1,10 @@
 page-patent-information {
   .patent-list{
+    h2{
+      overflow:hidden!important;
+      white-space:nowrap;
+      text-overflow:ellipsis!important;
+    }
     margin-top: 20px;
   }
 }

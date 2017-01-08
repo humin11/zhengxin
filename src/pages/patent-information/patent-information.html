@@ -16,21 +16,11 @@
 <ion-content no-padding>
 
   <ion-list class="patent-list">
-    <ion-item>
-      <h2>滑动解锁专利申请</h2>
-      <p>发明</p>
-      <p item-right>2016-12-26 10:19</p>
-    </ion-item>
-    <ion-item>
-      <h2>滑动解锁专利申请</h2>
-      <p>发明</p>
-      <p item-right>2016-12-26 10:19</p>
-    </ion-item>
-    <ion-item>
-      <h2>滑动解锁专利申请</h2>
-      <p>发明</p>
-      <p item-right>2016-12-26 10:19</p>
+    <ion-item *ngFor="let detail of patentDetail">
+      <h2>{{detail.pdes}}</h2>
+      <p>{{detail.ptype}}</p>
+      <p item-right>{{detail.pdate}}</p>
     </ion-item>
   </ion-list>
-  <declaration></declaration>
+  <!-- <declaration></declaration> -->
 </ion-content>

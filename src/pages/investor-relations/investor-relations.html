@@ -14,13 +14,13 @@
 
 
 <ion-content no-padding>
-  <ion-card>
+  <ion-card *ngFor="let investmentInfo of investmentInfo">
     <ion-item-group>
       <ion-item-divider color="primary">股东信息</ion-item-divider>
       <ion-row class="information">
         <ion-col>
           <h3>股东姓名</h3>
-          <p>张苏纳</p>
+          <p>{{investmentInfo.iuname}}</p>
         </ion-col>
         <ion-col>
           <h3>性质</h3>
@@ -34,13 +34,13 @@
       <ion-row class="information">
         <ion-col width-33>
           <h3>认缴出资额</h3>
-          <p>200万</p>
-          <p>2016-12-31</p>
+          <p>{{investmentInfo.iamt}}</p>
+          <p>{{investmentInfo.idate}}</p>
         </ion-col>
         <ion-col width-33>
           <h3>实缴出资额</h3>
-          <p>200万</p>
-          <p>2016-12-31</p>
+          <p>{{investmentInfo.iamt}}</p>
+          <p>{{investmentInfo.idate}}</p>
         </ion-col>
         <!-- <ion-col>
           <p>注册号</p>
@@ -60,6 +60,6 @@
     </ion-item-group>
   </ion-card>
 
-  <declaration></declaration>
+  <!-- <declaration></declaration> -->
 
 </ion-content>
