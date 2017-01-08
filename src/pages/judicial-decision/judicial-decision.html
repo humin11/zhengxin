@@ -16,22 +16,22 @@
 <ion-content no-padding>
 
   <ion-list class="judicial-list">
-    <ion-item>
-      <ion-row>
-        <ion-col>
-          原告
+    <ion-item *ngFor="let detail of sentenceDetail">
+      <ion-row class="judicial-title">
+        <ion-col width-33>
+          {{detail.scode}}
         </ion-col>
-        <ion-col>
+        <ion-col width-33>
           胜诉
         </ion-col>
-        <ion-col>
-          最高法院
+        <ion-col width-33>
+          {{detail.scourt}}
         </ion-col>
       </ion-row>
       <ion-row class="judicial-row">
         <ion-col>
           <p text-wrap>
-            房产资讯、商务咨询、商务信息咨询、旅游信息咨询、财务咨询、财务信息咨询、理财咨询、劳务咨询、劳务信息咨询
+            {{detail.sdetail}}
           </p>
         </ion-col>
       </ion-row>
@@ -40,39 +40,11 @@
         <p>民事案件</p>
         </ion-col>
         <ion-col>
-        <p>2016-12-26 10:19</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col>
-          原告
-        </ion-col>
-        <ion-col>
-          胜诉
-        </ion-col>
-        <ion-col>
-          最高法院
-        </ion-col>
-      </ion-row>
-      <ion-row class="judicial-row">
-        <ion-col>
-          <p text-wrap>
-            房产资讯、商务咨询、商务信息咨询、旅游信息咨询、财务咨询、财务信息咨询、理财咨询、劳务咨询、劳务信息咨询
-          </p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-        <p>民事案件</p>
-        </ion-col>
-        <ion-col>
-        <p>2016-12-26 10:19</p>
+        <p>{{detail.sdate}}</p>
         </ion-col>
       </ion-row>
     </ion-item>
 </ion-list>
 
-<declaration></declaration>
+<!-- <declaration></declaration> -->
 </ion-content>

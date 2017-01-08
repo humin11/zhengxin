@@ -34,12 +34,10 @@ export class HomePage {
     this.navCtrl.push(SearchPage);
   }
 
-
-  CompanyDetails() {
-    this.navCtrl.push(CompanyDetailsPage)
-    // this.navCtrl.push(CompanyDetailsPage).then(() => {
-    //   const index = this.navCtrl.getActive().index;
-    //   this.navCtrl.remove(0, index);
+  ionViewWillLoad() {
+    // this.companyServe.getList().subscribe(data => {
+    //     this.conList = data;
+    //     console.log(this.conList);
     // });
   }
 

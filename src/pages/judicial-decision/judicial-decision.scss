@@ -1,6 +1,13 @@
 page-judicial-decision {
   .judicial-list{
     margin-top: 20px;
+    .judicial-title{
+      ion-col{
+        overflow:hidden!important;
+        white-space:nowrap;
+        text-overflow:ellipsis!important;
+      }
+    }
     .judicial-row{
       p{
         white-space: normal;

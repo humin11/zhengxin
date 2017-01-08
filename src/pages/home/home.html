@@ -16,7 +16,7 @@
     <ion-card-content no-padding>
       <ion-row>
         <ion-col width-20 text-center>
-          <button ion-button block class="button-circle" color="purple" (click)="CompanyDetails()">
+          <button ion-button block class="button-circle" color="purple">
             <ion-icon name="at" large></ion-icon>
           </button>
           企业
@@ -56,7 +56,7 @@
           <img src="/assets/icon/company.png">
         </ion-avatar>
         <h2 color="gray">{{ _company.name }}</h2>
-        <p>2016-12-29</p>
+        <p>{{ _company.industry }}</p>
       </ion-item>
     </ion-item-group>
   </ion-card>

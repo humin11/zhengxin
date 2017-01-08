@@ -18,27 +18,27 @@
     <ion-item-group>
       <ion-item-divider color="primary">登记信息</ion-item-divider>
       <ion-row class="information">
-        <ion-col>
+        <ion-col width-33>
           <h3>注册号</h3>
-          <p>234434345325</p>
+          <p>{{detail.detail_reg_code}}</p>
         </ion-col>
-        <ion-col>
+        <ion-col width-33>
           <h3>社会信用代码</h3>
-          <p>23423432</p>
+          <p>{{detail.detail_credit_code}}</p>
         </ion-col>
-        <ion-col>
+        <ion-col width-33>
           <h3>组织机构代码</h3>
-          <p>3242342342342</p>
+          <p>{{detail.detail_org_code}}</p>
         </ion-col>
       </ion-row>
       <ion-row class="information">
         <ion-col width-33>
           <h3>经营状态</h3>
-          <p>存续</p>
+          <p>{{detail.detail_status}}</p>
         </ion-col>
         <ion-col width-33>
           <h3>企业类型</h3>
-          <p>股份制</p>
+          <p>{{detail.detail_type}}</p>
         </ion-col>
         <!-- <ion-col>
           <p>注册号</p>
@@ -48,7 +48,7 @@
       <ion-row class="information">
         <ion-col>
           <h3>经营范围</h3>
-          <p>房产资讯、商务咨询、商务信息咨询、旅游信息咨询、财务咨询、财务信息咨询、理财咨询、劳务咨询、劳务信息咨询</p>
+          <p>{{detail.detail_range}}</p>
         </ion-col>
       </ion-row>
     </ion-item-group>

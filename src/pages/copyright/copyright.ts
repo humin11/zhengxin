@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration';
+import { Copy_right_detail,CopyRightInfo} from '../../models/class.model';
 
 /*
   Generated class for the Copyright page.
@@ -15,10 +16,14 @@ import { DeclarationComponent } from '../../components/declaration/declaration';
 })
 export class CopyrightPage {
 
+  copyRightInfo:CopyRightInfo;
+  copyRightDetail:Copy_right_detail[];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CopyrightPage');
+  ionViewWillLoad() {
+    this.copyRightInfo = this.navParams.get('copyRightInfo');
+    console.log(this.copyRightInfo.copy_right_detail);
   }
 
 }

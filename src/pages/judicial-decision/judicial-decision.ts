@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DeclarationComponent } from '../../components/declaration/declaration'
+import { DeclarationComponent } from '../../components/declaration/declaration';
+import { Sentence,Sentence_detail } from '../../models/class.model';
 
 /*
   Generated class for the JudicialDecision page.
@@ -15,10 +16,14 @@ import { DeclarationComponent } from '../../components/declaration/declaration'
 })
 export class JudicialDecisionPage {
 
+  sentence:Sentence;
+  sentenceDetail:Sentence_detail[];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JudicialDecisionPage');
+  ionViewWillLoad() {
+    this.sentence = this.navParams.get("sentence");
+    this.sentenceDetail = this.sentence.sentence_detail;
   }
 
 }
