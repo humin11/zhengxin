@@ -1,3 +1,7 @@
+
+'use strict';
+
+import { Company } from './company';
 export interface Business {
   shareholder_info: Array<any>;
   business_info: Detail;
@@ -5,7 +9,6 @@ export interface Business {
   detail_id:string;
   branch: Array<any>;
 }
-
 //主要人员信息
 export interface Main_info {
   supervisor_uname: string; //公司主要人员姓名
@@ -32,19 +35,34 @@ export interface Change_detail {
 
 
 export interface CopyRightInfo {
-  copy_right_detail: Array<any>;
+  copy_right_detail: Array<Copy_right_detail>;
   detail_id: string;
+}
+export interface Copy_right_detail {
+  pcode:string;
+  pdate:string;
+  pdes:string;
+  pdetail:string;
+  pid:string;
+  ptype:string;
 }
 
 //企业基本信息 节点
-export interface Detail {
-  detail_type:string;  //公司类型
-  detail_status:string; // 经营状态
-  contact_detail: Array<any>;
-  detail_credit_code: string; //统一社会信誉代码
-  detail_reg_code: string; //注册号
-  detail_org_code: string;  //组织机构代码
-  detail_range: string; //经营范围
+export class Detail {
+  public detail_type:string; //公司类型
+  public detail_status:string; // 经营状态
+  public contact_detail: Contact_detail;
+  public detail_credit_code: string; //统一社会信誉代码
+  public detail_reg_code: string; //注册号
+  public detail_org_code: string; //组织机构代码
+  public detail_range: string; //经营范围
+
+  constructor(detail_type:string, detail_status:string, contact_detail: Contact_detail, detail_credit_code: string, detail_reg_code: string, detail_org_code: string, detail_range: string) {}
+}
+export interface Contact_detail {
+  detail_address: string;
+  detail_mail: string;
+  detail_web: string;
 }
 
 export interface Investment {
@@ -64,27 +82,26 @@ export interface List {
   totalCount: number;
   page: number;
   count: number; //数量
-  detail: Array<List_detail>;
-}
-export interface List_detail {
-  detail_name: string; //公司名称
-  detail_address: string; //公司地址
-  detail_amt: string; //注册资本
-  detail_industry: string; //行业
-  detail_id: string;
-  detail_corporation: string; //法定代表人
+  detail: Array<Company>;
 }
 
 export interface PatentInfo {
-  patent_detail: Array<any>;
+  patent_detail: Array<Patent_detail>;
   detail_id: string;
+}
+export interface Patent_detail {
+  pcode:string;
+  pdate:string;
+  pdes:string;
+  pdetail:string;
+  pid:string;
+  ptype:string;
 }
 
 export interface Sentence {
   sentence_detail: Array<Sentence_detail>;
   detail_id: string;
 }
-
 //裁判文书 节点
 export interface Sentence_detail {
   sdetail: string; //详情
@@ -99,7 +116,6 @@ export interface Shareholder {
   shareholder_info: Array<Shareholder_info>;
   detail_id: string;
 }
-
 //股东信息 节点
 export interface Shareholder_info {
   sname: string; //名称

@@ -20,6 +20,17 @@ import { RatingInformationPage } from '../pages/rating-information/rating-inform
 import { CreditReportPage } from '../pages/credit-report/credit-report';
 import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
 import { RegisterPage } from '../pages/register/register';
+import { NewsSinglePage } from '../pages/news-single/news-single';
+
+import { NewsService } from '../providers/news';
+import { CompanyService } from '../providers/companies';
+import { ListDetailServe } from '../providers/list-detail-serve';
+import { JudicialDecisionServe } from '../providers/judicial-decision-serve';
+import { PatentInfoServe } from '../providers/patent-info-serve';
+import { CopyrightServe } from '../providers/copyright-serve';
+import { BusinessServe } from '../providers/business-serve';
+import { InvestmentServe } from '../providers/investment-serve';
+import { ShareholderServe } from '../providers/shareholder-serve';
 
 @NgModule({
   declarations: [
@@ -41,6 +52,7 @@ import { RegisterPage } from '../pages/register/register';
     CreditReportPage,
     OwnershipStructurePage,
     RegisterPage,
+    NewsSinglePage,
     TabsPage
   ],
   imports: [
@@ -73,8 +85,9 @@ import { RegisterPage } from '../pages/register/register';
     CreditReportPage,
     OwnershipStructurePage,
     RegisterPage,
+    NewsSinglePage,
     TabsPage
   ],
-  providers: [Storage,{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Storage, NewsService, CompanyService, ListDetailServe, JudicialDecisionServe, PatentInfoServe, CopyrightServe, BusinessServe, InvestmentServe, ShareholderServe, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

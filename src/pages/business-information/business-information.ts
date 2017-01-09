@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration';
-import { Detail} from '../../models/class.model';
+
+import { Detail,Business } from '../../models/class.model';
 /*
   Generated class for the BusinessInformation page.
 
@@ -15,12 +16,14 @@ import { Detail} from '../../models/class.model';
 })
 export class BusinessInformationPage {
 
-  detail : Detail;
+  detail: Detail;
+  business: Business;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {
-    console.log('ionViewDidLoad BusinessInformationPage');
-    this.detail = this.navParams.get('detail');
+    this.business = this.navParams.get('business');
+    this.detail = this.business.business_info;
   }
 
 }

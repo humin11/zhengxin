@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { CompanyServe } from '../../providers/company-serve';
-import { List,List_detail } from '../../models/class.model';
+import { List,Detail } from '../../models/class.model';
+import { Company } from '../../models/company';
 import { CompanyDetailsPage } from '../company-details/company-details';
+import { CompanyService } from '../../providers/companies';
+import { ListDetailServe } from '../../providers/list-detail-serve';
 
 /*
   Generated class for the Search page.
@@ -12,30 +14,30 @@ import { CompanyDetailsPage } from '../company-details/company-details';
 */
 @Component({
   selector: 'page-search',
-  templateUrl: 'search.html',
-  providers:[CompanyServe]
+  templateUrl: 'search.html'
 })
 export class SearchPage {
-  conList: List;
+  public companies: Company[];
   totalCount: number;
-  detail:List_detail[];
-  constructor(private companyServe: CompanyServe,public navCtrl: NavController, public navParams: NavParams) {}
+  details: Company[];
+  detail:Detail;
+  public companyDetailsPage: any = CompanyDetailsPage;
+
+  constructor(private listDetailServe:ListDetailServe,private companyService: CompanyService,public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewWillLoad() {
-    this.companyServe.getList().subscribe(data => {
-        this.conList = data;
-        this.totalCount = this.conList.totalCount;
-        this.detail = this.conList.detail;
-        console.log(this.conList);
+    this.companyService.getAll().subscribe(data => {
+        this.companies = data;
+        this.totalCount = this.companies.length;
     });
   }
 
+
   CompanyDetails(con) {
-    this.navCtrl.push(CompanyDetailsPage,{cons : con});
-    // this.navCtrl.push(CompanyDetailsPage).then(() => {
-    //   const index = this.navCtrl.getActive().index;
-    //   this.navCtrl.remove(0, index);
-    // });
+    this.listDetailServe.getListDetail(con.detail_id).subscribe(data => {
+      this.detail = data;
+      this.navCtrl.push(CompanyDetailsPage,{info:con,detail:this.detail});
+    });
   }
 
 }

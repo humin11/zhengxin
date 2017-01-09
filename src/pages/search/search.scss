@@ -1,3 +1,8 @@
 page-search {
-
+  p{
+    overflow:hidden!important;
+    white-space:nowrap;
+    width:100%;
+    text-overflow:ellipsis!important;
+  }
 }
