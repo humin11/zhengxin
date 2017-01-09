@@ -9,7 +9,7 @@ import { InvestorRelationsPage } from '../investor-relations/investor-relations'
 import { RatingInformationPage } from '../rating-information/rating-information';
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
-import { Contact_detail,Sentence,PatentInfo,CopyRightInfo } from '../../models/class.model';
+import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,Investment ,Shareholder,ChangeInfo} from '../../models/class.model';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
@@ -17,10 +17,12 @@ import { CopyrightServe } from '../../providers/copyright-serve';
 
 import { Company } from '../../models/company';
 
-import { List,Business,Detail,Investment ,Shareholder} from '../../models/class.model';
 import { BusinessServe} from '../../providers/business-serve';
 import {InvestmentServe} from '../../providers/investment-serve';
 import {ShareholderServe} from '../../providers/shareholder-serve';
+
+import { ChangeInfoServe } from '../../providers/change-info-serve';
+import { ChangeInfoPage } from '../change-info/change-info';
 /*
   Generated class for the Search page.
 
@@ -30,7 +32,7 @@ import {ShareholderServe} from '../../providers/shareholder-serve';
 @Component({
   selector: 'page-company-details',
   templateUrl: 'company-details.html',
-  providers:[BusinessServe,InvestmentServe,ShareholderServe]
+  providers:[BusinessServe,InvestmentServe,ShareholderServe,ChangeInfoServe]
 })
 export class CompanyDetailsPage {
   public company: Company;
@@ -60,7 +62,10 @@ export class CompanyDetailsPage {
   //投资
   public investment : Investment;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe) {
+  public change_Info : ChangeInfo;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe) {
     this.company = this.navParams.data;
     this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res; console.log(this.companyInfo);});
   }
@@ -130,6 +135,13 @@ export class CompanyDetailsPage {
     this.shareholderServe.getSentence(this.company.company_id).subscribe(data =>{
       this.shareholder = data;
       this.navCtrl.push(OwnershipStructurePage,{shareholder : this.shareholder});
+    })
+  }
+
+  changeInfo(){
+    this.changeInfoServe.getChangeInfo(this.company.company_id).subscribe(data => {
+      this.change_Info = data;
+      this.navCtrl.push(ChangeInfoPage,{changeInfo : this.change_Info});
     })
   }
 }
