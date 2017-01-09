@@ -20,9 +20,6 @@ import { ShareholderServe } from '../../providers/shareholder-serve';
 
 import { Company } from '../../models/company';
 
-import { BusinessServe} from '../../providers/business-serve';
-import {InvestmentServe} from '../../providers/investment-serve';
-import {ShareholderServe} from '../../providers/shareholder-serve';
 
 import { ChangeInfoServe } from '../../providers/change-info-serve';
 import { ChangeInfoPage } from '../change-info/change-info';
