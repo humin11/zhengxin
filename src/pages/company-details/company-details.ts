@@ -64,7 +64,7 @@ export class CompanyDetailsPage {
 
   public change_Info : ChangeInfo;
 
-
+  like : number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe) {
     this.company = this.navParams.data;
     this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res; console.log(this.companyInfo);});
@@ -143,5 +143,10 @@ export class CompanyDetailsPage {
       this.change_Info = data;
       this.navCtrl.push(ChangeInfoPage,{changeInfo : this.change_Info});
     })
+  }
+
+  //点赞
+  likes(){
+    this.like ++;
   }
 }
