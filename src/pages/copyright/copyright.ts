@@ -23,7 +23,8 @@ export class CopyrightPage {
 
   ionViewWillLoad() {
     this.copyRightInfo = this.navParams.get('copyRightInfo');
-    console.log(this.copyRightInfo.copy_right_detail);
+    this.copyRightDetail = this.copyRightInfo.copy_right_detail;
+    console.log(this.copyRightDetail);
   }
 
 }

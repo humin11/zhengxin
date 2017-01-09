@@ -13,13 +13,13 @@ import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,I
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
-import { CopyrightServe } from '../../providers/copyright-serve';
+import { CopyrightServe } from '../../providers/copyrights';
+import { BusinessServe } from '../../providers/business';
+import { InvestmentServe } from '../../providers/investment-serve';
+import { ShareholderServe } from '../../providers/shareholder-serve';
 
 import { Company } from '../../models/company';
 
-import { BusinessServe} from '../../providers/business-serve';
-import {InvestmentServe} from '../../providers/investment-serve';
-import {ShareholderServe} from '../../providers/shareholder-serve';
 
 import { ChangeInfoServe } from '../../providers/change-info-serve';
 import { ChangeInfoPage } from '../change-info/change-info';
@@ -67,7 +67,7 @@ export class CompanyDetailsPage {
   like : number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe) {
     this.company = this.navParams.data;
-    this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res; console.log(this.companyInfo);});
+    this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res;});
   }
 
   ngOnInit() {
@@ -76,8 +76,6 @@ export class CompanyDetailsPage {
 
   ionViewDidLoad() {
     console.log("Did Load");
-     //this.con = this.navParams.get("info");
-     //this.detail = this.navParams.get("detail");
   }
 
   ionViewWillEnter() {

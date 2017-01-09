@@ -16,8 +16,16 @@ export interface Main_info {
 }
 
 export interface CerInfo {
-  cert_detail: Array<any>;
+  cert_detail: Array<Cert_detail>;
   detail_id: string;
+}
+
+export interface Cert_detail {
+   cdetail:string;
+   cname:string;
+   cstart_date:string;
+   cend_date:string;
+   cid:string;
 }
 
 //公司变更信息 节点
@@ -39,12 +47,11 @@ export interface CopyRightInfo {
   detail_id: string;
 }
 export interface Copy_right_detail {
-  pcode:string;
-  pdate:string;
-  pdes:string;
-  pdetail:string;
-  pid:string;
-  ptype:string;
+  wname:string;
+  wtype:string;
+  wid:string;
+  wdate:string;
+  wcode:string;
 }
 
 //企业基本信息 节点

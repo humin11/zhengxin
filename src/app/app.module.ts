@@ -28,8 +28,8 @@ import { CompanyService } from '../providers/companies';
 import { ListDetailServe } from '../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../providers/patent-info-serve';
-import { CopyrightServe } from '../providers/copyright-serve';
-import { BusinessServe } from '../providers/business-serve';
+import { CopyrightServe } from '../providers/copyrights';
+import { BusinessServe } from '../providers/business';
 import { InvestmentServe } from '../providers/investment-serve';
 import { ShareholderServe } from '../providers/shareholder-serve';
 
