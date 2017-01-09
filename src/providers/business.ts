@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 import { Business } from '../models/class.model';
 import 'rxjs/add/operator/map';
+
 
 /*
   Generated class for the BusinessServe provider.
@@ -16,7 +18,7 @@ export class BusinessServe {
     console.log('Hello BusinessServe Provider');
   }
 
-  getBusiness(id){
+  getBusiness(id): Observable<Business>{
     return this.http.get('assets/json/business/'+id+'_business.json').map(res => res.json())
   }
 

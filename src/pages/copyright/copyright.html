@@ -17,17 +17,17 @@
   <ion-card class="copyright-card">
     <ion-item-group>
       <ion-item-divider color="primary">原创著作</ion-item-divider>
-      <ion-row>
+      <ion-row *ngFor="let detail of copyRightDetail">
         <ion-col>
         <ion-card-header>
-          滑动解锁的技术说明
+          {{detail.wname}}
         </ion-card-header>
         <ion-card-content>
-          <p>作品著作权证书</p>
-          <p>登记号 2016-G-123456</p>
-          <p>登记日期 2016-12-31</p>
-          <p>发布日期 2016-12-31</p>
-          <p>完成日期 2016-12-31</p>
+          <p>{{detail.wtype}}</p>
+          <p>登记号 {{detail.wcode}}</p>
+          <p>登记日期 {{detail.wdate}}</p>
+          <p>发布日期 {{detail.wdate}}</p>
+          <p>完成日期 {{detail.wdate}}</p>
         </ion-card-content>
         </ion-col>
       </ion-row>
@@ -42,5 +42,5 @@
       </ion-row>
     </ion-item-group>
   </ion-card>
-  <declaration></declaration>
+  <!-- <declaration></declaration> -->
 </ion-content>
