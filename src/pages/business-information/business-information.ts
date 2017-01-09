@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration';
+
 import { Detail,Business } from '../../models/class.model';
 /*
   Generated class for the BusinessInformation page.

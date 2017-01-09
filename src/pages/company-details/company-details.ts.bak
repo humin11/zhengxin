@@ -13,6 +13,7 @@ import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,I
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
+<<<<<<< HEAD
 import { CopyrightServe } from '../../providers/copyrights';
 import { BusinessServe } from '../../providers/business';
 import { InvestmentServe } from '../../providers/investment-serve';

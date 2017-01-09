@@ -1,7 +1,7 @@
+
 'use strict';
 
 import { Company } from './company';
-
 export interface Business {
   shareholder_info: Array<any>;
   business_info: Detail;
