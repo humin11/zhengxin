@@ -29,9 +29,10 @@
 
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small color="danger">
+        <button ion-button icon-left clear small color="danger" (click)="likes()">
           <ion-icon name="heart"></ion-icon>
           <div>赞一下</div>
+          <div>{{like}}</div>
         </button>
       </ion-col>
       <ion-col>
