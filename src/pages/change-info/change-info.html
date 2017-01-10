@@ -14,7 +14,7 @@
 
 
 <ion-content no-padding>
-  <ion-card>
+  <!-- <ion-card>
     <ion-item-group *ngFor="let detail of details">
       <ion-item-divider color="primary">变更信息</ion-item-divider>
       <ion-row class="information">
@@ -42,5 +42,34 @@
         </ion-col>
       </ion-row>
     </ion-item-group>
-  </ion-card>
+  </ion-card> -->
+      <ion-row class="chang-title">
+        <ion-col width-50>
+          <ion-label color="danger"><ion-icon name="star"></ion-icon>变更前</ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <ion-label color="danger"><ion-icon name="star"></ion-icon>变更后</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let detail of details">
+        <ion-col>
+          <ion-row>
+            <ion-col width-33 offset-33>
+              {{detail.cproject}}
+            </ion-col>
+            <ion-col width-33>
+              <ion-badge item-right>{{detail.cdate}}</ion-badge>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-50>
+              <p>{{detail.cbefore}}</p>
+            </ion-col>
+            <ion-col width-50>
+              <p>{{detail.cafter}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
 </ion-content>

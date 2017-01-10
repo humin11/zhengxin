@@ -122,11 +122,11 @@ export class CompanyDetailsPage {
   }
 
   ratingInformation() {
-    this.navCtrl.push(RatingInformationPage);
+    //this.navCtrl.push(RatingInformationPage);
   }
 
   creditReport() {
-    this.navCtrl.push(CreditReportPage);
+    //this.navCtrl.push(CreditReportPage);
   }
 
   ownershipStructure() {
@@ -145,6 +145,6 @@ export class CompanyDetailsPage {
 
   //点赞
   likes(){
-    this.like ++;
+    //this.like ++;
   }
 }

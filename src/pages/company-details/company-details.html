@@ -32,16 +32,16 @@
         <button ion-button icon-left clear small color="danger" (click)="likes()">
           <ion-icon name="heart"></ion-icon>
           <div>赞一下</div>
-          <div>{{like}}</div>
+          <!-- <div>{{like}}</div> -->
         </button>
       </ion-col>
-      <ion-col>
+      <ion-col (click)="creditReport()">
         <button ion-button icon-left clear small color="primary">
           <ion-icon name="albums"></ion-icon>
           <div>信用报告</div>
         </button>
       </ion-col>
-      <ion-col>
+      <ion-col (click)="ratingInformation()">
         <button ion-button icon-left clear small color="blue">
           <ion-icon name="globe"></ion-icon>
           <div>SSS级别</div>
