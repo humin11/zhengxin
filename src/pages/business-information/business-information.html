@@ -66,9 +66,23 @@
   <ion-card>
     <ion-item-group>
       <ion-item-divider color="green">主要成员</ion-item-divider>
-      <ion-row>
-
-        <button ion-button clear item-right>展开</button>
+      <ion-row *ngIf="main_member==false">
+        <button ion-button clear item-right (click)="mainMember()">展开</button>
+      </ion-row>
+      <ion-row *ngIf="main_member==true" class="main-member">
+        <ion-col no-padding>
+        <ion-row *ngFor="let member of business.main">
+          <ion-col padding="10px">
+            <p>{{member.supervisor_type}}</p>
+          </ion-col>
+          <ion-col padding="10px">
+            <p>{{member.supervisor_uname}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <button ion-button clear item-left (click)="mainMember()">关闭</button>
+        </ion-row>
+      </ion-col>
       </ion-row>
     </ion-item-group>
   </ion-card>

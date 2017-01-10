@@ -21,16 +21,19 @@ import { CreditReportPage } from '../pages/credit-report/credit-report';
 import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-structure';
 import { RegisterPage } from '../pages/register/register';
 import { NewsSinglePage } from '../pages/news-single/news-single';
+import { ChangeInfoPage } from '../pages/change-info/change-info';
+import { QualificationPage } from '../pages/qualification/qualification';
 
 import { NewsService } from '../providers/news';
 import { CompanyService } from '../providers/companies';
 import { ListDetailServe } from '../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../providers/patent-info-serve';
-import { CopyrightServe } from '../providers/copyright-serve';
-import { BusinessServe } from '../providers/business-serve';
+import { CopyrightServe } from '../providers/copyrights';
+import { BusinessServe } from '../providers/business';
 import { InvestmentServe } from '../providers/investment-serve';
 import { ShareholderServe } from '../providers/shareholder-serve';
+import { ChangeInfoServe } from '../providers/change-info-serve';
 
 @NgModule({
   declarations: [
@@ -53,17 +56,19 @@ import { ShareholderServe } from '../providers/shareholder-serve';
     OwnershipStructurePage,
     RegisterPage,
     NewsSinglePage,
-    TabsPage
+    TabsPage,
+    ChangeInfoPage,
+    QualificationPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp, {
+    IonicModule.forRoot(MyApp,{
       backButtonText: '',
       iconMode: 'ios',
       modalEnter: 'modal-slide-in',
       modalLeave: 'modal-slide-out',
       tabsPlacement: 'bottom',
       pageTransition: 'ios'
-    }, {})
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -86,7 +91,9 @@ import { ShareholderServe } from '../providers/shareholder-serve';
     OwnershipStructurePage,
     RegisterPage,
     NewsSinglePage,
-    TabsPage
+    TabsPage,
+    ChangeInfoPage,
+    QualificationPage
   ],
   providers: [Storage, NewsService, CompanyService, ListDetailServe, JudicialDecisionServe, PatentInfoServe, CopyrightServe, BusinessServe, InvestmentServe, ShareholderServe, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

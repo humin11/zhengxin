@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { DeclarationComponent } from '../../components/declaration/declaration';
 import { Sentence,Sentence_detail } from '../../models/class.model';
 
+
 /*
   Generated class for the JudicialDecision page.
 
