@@ -15,6 +15,7 @@ export interface Main_info {
   supervisor_type: string; //人员职位
 }
 
+//资质信息
 export interface CerInfo {
   cert_detail: Array<Cert_detail>;
   detail_id: string;

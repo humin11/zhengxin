@@ -9,7 +9,7 @@ import { InvestorRelationsPage } from '../investor-relations/investor-relations'
 import { RatingInformationPage } from '../rating-information/rating-information';
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
-import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,Investment ,Shareholder,ChangeInfo} from '../../models/class.model';
+import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,Investment ,Shareholder,ChangeInfo,CerInfo} from '../../models/class.model';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
@@ -23,6 +23,9 @@ import { Company } from '../../models/company';
 
 import { ChangeInfoServe } from '../../providers/change-info-serve';
 import { ChangeInfoPage } from '../change-info/change-info';
+
+import { QuaificationServe } from '../../providers/quaification-serve';
+import { QualificationPage } from '../qualification/qualification';
 /*
   Generated class for the Search page.
 
@@ -32,7 +35,7 @@ import { ChangeInfoPage } from '../change-info/change-info';
 @Component({
   selector: 'page-company-details',
   templateUrl: 'company-details.html',
-  providers:[BusinessServe,InvestmentServe,ShareholderServe,ChangeInfoServe]
+  providers:[BusinessServe,InvestmentServe,ShareholderServe,ChangeInfoServe,QuaificationServe]
 })
 export class CompanyDetailsPage {
   public company: Company;
@@ -64,8 +67,10 @@ export class CompanyDetailsPage {
 
   public change_Info : ChangeInfo;
 
-  like : number = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe) {
+  //资质信息
+  public quaification : CerInfo;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe,private quaificationServe : QuaificationServe) {
     this.company = this.navParams.data;
     this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res;});
   }
@@ -143,8 +148,11 @@ export class CompanyDetailsPage {
     })
   }
 
-  //点赞
-  likes(){
-    //this.like ++;
+  //资质认证
+  qualification(){
+    this.quaificationServe.getQuaificatinServe(this.company.company_id).subscribe(data => {
+      this.navCtrl.push(QualificationPage,{qualification:data});
+    })
   }
+
 }
