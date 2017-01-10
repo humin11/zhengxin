@@ -22,6 +22,7 @@ import { OwnershipStructurePage } from '../pages/ownership-structure/ownership-s
 import { RegisterPage } from '../pages/register/register';
 import { NewsSinglePage } from '../pages/news-single/news-single';
 import { ChangeInfoPage } from '../pages/change-info/change-info';
+import { QualificationPage } from '../pages/qualification/qualification';
 
 import { NewsService } from '../providers/news';
 import { CompanyService } from '../providers/companies';
@@ -55,7 +56,8 @@ import { ShareholderServe } from '../providers/shareholder-serve';
     RegisterPage,
     NewsSinglePage,
     TabsPage,
-    ChangeInfoPage
+    ChangeInfoPage,
+    QualificationPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -89,7 +91,8 @@ import { ShareholderServe } from '../providers/shareholder-serve';
     RegisterPage,
     NewsSinglePage,
     TabsPage,
-    ChangeInfoPage
+    ChangeInfoPage,
+    QualificationPage
   ],
   providers: [Storage, NewsService, CompanyService, ListDetailServe, JudicialDecisionServe, PatentInfoServe, CopyrightServe, BusinessServe, InvestmentServe, ShareholderServe, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

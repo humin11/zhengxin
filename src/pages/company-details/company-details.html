@@ -29,10 +29,9 @@
 
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small color="danger" (click)="likes()">
+        <button ion-button icon-left clear small color="danger">
           <ion-icon name="heart"></ion-icon>
           <div>赞一下</div>
-          <div>{{like}}</div>
         </button>
       </ion-col>
       <ion-col>
@@ -114,7 +113,7 @@
           </button>
           著作权
         </ion-col>
-        <ion-col width-20 text-center>
+        <ion-col width-20 text-center (click)="qualification()">
           <button ion-button block class="button-circle" color="blue">
             <ion-icon name="eye"></ion-icon>
           </button>
