@@ -32,6 +32,7 @@ import { CopyrightServe } from '../providers/copyrights';
 import { BusinessServe } from '../providers/business';
 import { InvestmentServe } from '../providers/investment-serve';
 import { ShareholderServe } from '../providers/shareholder-serve';
+import { ChangeInfoServe } from '../providers/change-info-serve';
 
 @NgModule({
   declarations: [
