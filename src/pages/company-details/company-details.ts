@@ -9,17 +9,23 @@ import { InvestorRelationsPage } from '../investor-relations/investor-relations'
 import { RatingInformationPage } from '../rating-information/rating-information';
 import { CreditReportPage } from '../credit-report/credit-report';
 import { OwnershipStructurePage } from '../ownership-structure/ownership-structure';
-import { Investment,Shareholder,Detail,Contact_detail,Sentence,PatentInfo,CopyRightInfo,Business } from '../../models/class.model';
+import { Contact_detail,Sentence,PatentInfo,CopyRightInfo,List,Business,Detail,Investment ,Shareholder,ChangeInfo,CerInfo} from '../../models/class.model';
 import { ListDetailServe } from '../../providers/list-detail-serve';
 import { JudicialDecisionServe } from '../../providers/judicial-decision-serve';
 import { PatentInfoServe } from '../../providers/patent-info-serve';
-import { CopyrightServe } from '../../providers/copyright-serve';
-import { BusinessServe } from '../../providers/business-serve';
+import { CopyrightServe } from '../../providers/copyrights';
+import { BusinessServe } from '../../providers/business';
 import { InvestmentServe } from '../../providers/investment-serve';
 import { ShareholderServe } from '../../providers/shareholder-serve';
 
 import { Company } from '../../models/company';
 
+
+import { ChangeInfoServe } from '../../providers/change-info-serve';
+import { ChangeInfoPage } from '../change-info/change-info';
+
+import { QuaificationServe } from '../../providers/quaification-serve';
+import { QualificationPage } from '../qualification/qualification';
 /*
   Generated class for the Search page.
 
@@ -28,7 +34,8 @@ import { Company } from '../../models/company';
 */
 @Component({
   selector: 'page-company-details',
-  templateUrl: 'company-details.html'
+  templateUrl: 'company-details.html',
+  providers:[BusinessServe,InvestmentServe,ShareholderServe,ChangeInfoServe,QuaificationServe]
 })
 export class CompanyDetailsPage {
   public company: Company;
@@ -58,9 +65,14 @@ export class CompanyDetailsPage {
   //投资
   public investment : Investment;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe) {
+  public change_Info : ChangeInfo;
+
+  //资质信息
+  public quaification : CerInfo;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private app: IonicApp, private investmentServe:InvestmentServe,private shareholderServe:ShareholderServe,private businessServe:BusinessServe,private copyrightServe:CopyrightServe,private patentInfoServe:PatentInfoServe,private judicialDecisionServe:JudicialDecisionServe, private listDetailServe:ListDetailServe,private changeInfoServe : ChangeInfoServe,private quaificationServe : QuaificationServe) {
     this.company = this.navParams.data;
-    this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res; console.log(this.companyInfo);});
+    this.listDetailServe.getListDetail(this.company.company_id).subscribe((res: Detail ) => {this.companyInfo = res;});
   }
 
   ngOnInit() {
@@ -69,8 +81,6 @@ export class CompanyDetailsPage {
 
   ionViewDidLoad() {
     console.log("Did Load");
-     //this.con = this.navParams.get("info");
-     //this.detail = this.navParams.get("detail");
   }
 
   ionViewWillEnter() {
@@ -117,11 +127,11 @@ export class CompanyDetailsPage {
   }
 
   ratingInformation() {
-    this.navCtrl.push(RatingInformationPage);
+    //this.navCtrl.push(RatingInformationPage);
   }
 
   creditReport() {
-    this.navCtrl.push(CreditReportPage);
+    //this.navCtrl.push(CreditReportPage);
   }
 
   ownershipStructure() {
@@ -130,4 +140,19 @@ export class CompanyDetailsPage {
       this.navCtrl.push(OwnershipStructurePage,{shareholder : this.shareholder});
     })
   }
+
+  changeInfo(){
+    this.changeInfoServe.getChangeInfo(this.company.company_id).subscribe(data => {
+      this.change_Info = data;
+      this.navCtrl.push(ChangeInfoPage,{changeInfo : this.change_Info});
+    })
+  }
+
+  //资质认证
+  qualification(){
+    this.quaificationServe.getQuaificatinServe(this.company.company_id).subscribe(data => {
+      this.navCtrl.push(QualificationPage,{qualification:data});
+    })
+  }
+
 }
