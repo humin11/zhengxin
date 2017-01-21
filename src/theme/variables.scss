@@ -24,26 +24,26 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #205c86,
+  primary:    #3f4f5e,
   secondary:  #3EC3D6,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #444,
   favorite:   #69BB7B,
   gray:       #333,
-  blue: #2767c3,
-  red: #ce4738,
-  green:      #15abac,
-  yellow: #dfaa0c,
-  purple: #533c92
+  blue: #90a7d0,
+  red: #ce5c78,
+  green:      #86af49,
+  yellow: #c8b374,
+  purple: #66648c
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-$searchbar-ios-background-color: #205c86;
-$searchbar-md-background-color: #205c86;
+$searchbar-ios-background-color: #3f4f5e;
+$searchbar-md-background-color: #3f4f5e;
 
 $font-family-base: 'Microsoft Yahei',sans-serif !default;
 
